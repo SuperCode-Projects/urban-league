@@ -7,7 +7,7 @@
   margin: 0;
 }
 
-TextField #outlined-basic {
+#outlined-basic {
   border-radius: 50px;
   color: white;
 }
