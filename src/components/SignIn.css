@@ -1,0 +1,13 @@
+#formSignIn {
+  width: 70%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+TextField #outlined-basic {
+  border-radius: 50px;
+  color: white;
+}
