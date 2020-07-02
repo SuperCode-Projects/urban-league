@@ -5,15 +5,15 @@ import Button from "@material-ui/core/Button";
 
 const SignIn = () => {
   return (
-    <div id="backgroundSignIn">
-      <form id="formSignIn">
-        <TextField id="outlined-basic" label="Email" variant="outlined" />
+    <div id="backgroundSignIn" className="background">
+      <div id="formSignIn">
+        <TextField id="filled-basic" label="Name" variant="filled" />
         <TextField
-          id="outlined-password-input"
+          id="filled-password-input"
           label="Password"
           type="password"
           autoComplete="current-password"
-          variant="outlined"
+          variant="filled"
         />
         <Button
           variant="contained"
@@ -23,7 +23,15 @@ const SignIn = () => {
         >
           Log In
         </Button>
-      </form>
+      </div>
+      <a href="#">Forgot your Password?</a>
+      <br></br>
+      <a href="#">
+        <p>
+          Noch keinen Accout? <br></br>
+          Jetzt registrieren
+        </p>
+      </a>
     </div>
   );
 };

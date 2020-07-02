@@ -1,17 +1,19 @@
-.App {
+.background {
   margin: 0;
   padding: 0;
   width: 100vw;
   height: 100vh;
   border: solid grey 1px;
   border-radius: 20px;
-  background-image: url(/images/background-img-sign-in.jpg);
-  background-position: center;
-  background-size: cover;
+  text-align: center;
+}
+
+p {
+  color: white;
 }
 
 @media only screen and (min-width: 320px) {
-  .App {
+  .background {
     width: 320px;
     height: 568px;
     margin: auto;
