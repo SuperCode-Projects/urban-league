@@ -1,9 +1,14 @@
 #backgroundHome {
-  background-image: url(/images/placeholder_maps.png);
+  background-image: url(/images/placeholder_maps2.png);
   background-position: center;
   background-size: cover;
+  position: relative;
 }
 
-#filled-search {
-  border-bottom: none;
+#divIconList {
+  width: 100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  bottom: 0;
 }

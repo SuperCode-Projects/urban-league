@@ -35,4 +35,9 @@ export default createMuiTheme({
       },
     },
   },
+  props: {
+    MuiTextField: {
+      borderRadius: "20px",
+    },
+  },
 });

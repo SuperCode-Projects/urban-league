@@ -7,16 +7,17 @@ import "./App.css";
 import SignIn from "./components/SignIn";
 import CourtCard from "./components/CourtCard";
 import Home from "./components/Home";
+import IconList from "./components/IconList";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <div id="App">
-        <SignIn />
+        {/* <SignIn />
         <br />
-        <br />
-        {/* <CourtCard />
-        <Home /> */}
+        <br /> */}
+        {/* <CourtCard /> */}
+        <Home />
       </div>
     </ThemeProvider>
   );

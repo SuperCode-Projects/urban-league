@@ -25,7 +25,6 @@ const SignIn = () => {
           id="filled-basic"
           label="Email"
           variant="outlined"
-          borderRadius="20px"
         />
         <TextField
           className={classes.password}
