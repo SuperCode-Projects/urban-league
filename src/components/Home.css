@@ -1,0 +1,9 @@
+#backgroundHome {
+  background-image: url(/images/placeholder_maps.png);
+  background-position: center;
+  background-size: cover;
+}
+
+#filled-search {
+  border-bottom: none;
+}

@@ -4,26 +4,14 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 import { makeStyles } from "@material-ui/core/styles";
+import { borders } from "@material-ui/system";
 
 // Customized styling der UI-Textfields und Buttons
 
 const useStyles = makeStyles({
   password: {
-    height: "2.8em",
-    backgroundColor: "white",
-    borderRadius: "20px",
     marginTop: "10px",
     marginBottom: "10px",
-  },
-  email: {
-    height: "2.8em",
-    backgroundColor: "white",
-    borderRadius: "20px",
-  },
-  button: {
-    backgroundColor: "#56CCF2",
-    borderRadius: "20px",
-    height: "3.2em",
   },
 });
 
@@ -36,20 +24,22 @@ const SignIn = () => {
           className={classes.email}
           id="filled-basic"
           label="Email"
-          variant="filled"
+          variant="outlined"
+          borderRadius="20px"
         />
         <TextField
           className={classes.password}
           id="filled-basic"
           label="Password"
-          variant="filled"
+          variant="outlined"
           type="password"
         />
 
         <Button
           className={classes.button}
+          size="large"
           variant="contained"
-          color="primary"
+          color="error"
           type="submit"
           id="buttonLogIn"
         >
