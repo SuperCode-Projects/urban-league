@@ -1,5 +1,5 @@
-:root {
-  --main-color-blue: #56ccf2;
+html {
+  background-color: lightgray;
 }
 
 .background {

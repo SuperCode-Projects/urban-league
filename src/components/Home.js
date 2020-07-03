@@ -1,5 +1,6 @@
 import React from "react";
 import IconList from "./IconList";
+import CourtCard from "./CourtCard";
 import "./Home.css";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
@@ -21,6 +22,7 @@ const Home = () => {
         label="CITYNAME"
         variant="filled"
       />
+
       <div id="divIconList">
         <IconList />
       </div>

@@ -7,6 +7,8 @@
 
 #divIconList {
   width: 100%;
+  height: 70px;
+  background-color: white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   position: absolute;
