@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     marginTop: "10px",
     marginBottom: "10px",
   },
-  name: {
+  email: {
     height: "2.8em",
     backgroundColor: "white",
     borderRadius: "20px",
@@ -23,13 +23,9 @@ const useStyles = makeStyles({
   button: {
     backgroundColor: "#56CCF2",
     borderRadius: "20px",
-    height: "2.8em",
+    height: "3.2em",
   },
 });
-
-const styleButton = {
-  bgcolor: "#56CCF2",
-};
 
 const SignIn = () => {
   const classes = useStyles();
@@ -37,9 +33,9 @@ const SignIn = () => {
     <div id="backgroundSignIn" className="background">
       <div id="formSignIn">
         <TextField
-          className={classes.name}
+          className={classes.email}
           id="filled-basic"
-          label="Name"
+          label="Email"
           variant="filled"
         />
         <TextField
@@ -51,7 +47,6 @@ const SignIn = () => {
         />
 
         <Button
-          {...styleButton}
           className={classes.button}
           variant="contained"
           color="primary"
@@ -61,7 +56,10 @@ const SignIn = () => {
           Log In
         </Button>
       </div>
-      <a href="#">Forgot your Password?</a>
+      <br></br>
+      <a href="#" id="forgotPassword">
+        Forgot your Password?
+      </a>
       <br></br>
       <a href="#">
         <p>

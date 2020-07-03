@@ -1,3 +1,7 @@
+:root {
+  --main-color-blue: #56ccf2;
+}
+
 .background {
   margin: 0;
   padding: 0;
