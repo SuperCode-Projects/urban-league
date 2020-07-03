@@ -16,28 +16,33 @@ export default createMuiTheme({
   overrides: {
     MuiTextField: {
       root: {
-        borderRadius: "20px",
-        height: "2.8em",
-        backgroundColor: "white",
+        "& .MuiOutlinedInput-root": {
+          "& fieldset": {
+            borderRadius: "20px",
+            height: "2.8em",
+            backgroundColor: "white",
+          },
+        },
+      },
+
+      MuiButton: {
+        textPrimary: {
+          color: "white",
+        },
+        sizeSmall: {
+          borderRadius: "10px",
+          backgroundColor: orange[400],
+        },
+        sizeLarge: {
+          borderRadius: "20px",
+          backgroundColor: lightBlue[500],
+        },
       },
     },
-    MuiButton: {
-      textPrimary: {
-        color: "white",
-      },
-      sizeSmall: {
-        borderRadius: "10px",
-        backgroundColor: orange[400],
-      },
-      sizeLarge: {
+    props: {
+      MuiTextField: {
         borderRadius: "20px",
-        backgroundColor: lightBlue[500],
       },
-    },
-  },
-  props: {
-    MuiTextField: {
-      borderRadius: "20px",
     },
   },
 });

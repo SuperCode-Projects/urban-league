@@ -20,7 +20,7 @@ const Home = () => {
         className={classes.cityname}
         id="filled-search"
         label="CITYNAME"
-        variant="filled"
+        variant="outlined"
       />
 
       <div id="divIconList">
