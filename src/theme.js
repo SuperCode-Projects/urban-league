@@ -24,25 +24,25 @@ export default createMuiTheme({
           },
         },
       },
+    },
 
-      MuiButton: {
-        textPrimary: {
-          color: "white",
-        },
-        sizeSmall: {
-          borderRadius: "10px",
-          backgroundColor: orange[400],
-        },
-        sizeLarge: {
-          borderRadius: "20px",
-          backgroundColor: lightBlue[500],
-        },
+    MuiButton: {
+      textPrimary: {
+        color: "white",
+      },
+      sizeSmall: {
+        borderRadius: "10px",
+        backgroundColor: orange[400],
+      },
+      sizeLarge: {
+        borderRadius: "20px",
+        backgroundColor: lightBlue[500],
       },
     },
-    props: {
-      MuiTextField: {
-        borderRadius: "20px",
-      },
+  },
+  props: {
+    MuiTextField: {
+      borderRadius: "20px",
     },
   },
 });

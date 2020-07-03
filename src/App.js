@@ -13,11 +13,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div id="App">
-        {/* <SignIn />
-        <br />
-        <br /> */}
+        <SignIn />
         {/* <CourtCard /> */}
-        <Home />
+        {/* <Home /> */}
         {/* <CourtDetails /> */}
       </div>
     </ThemeProvider>

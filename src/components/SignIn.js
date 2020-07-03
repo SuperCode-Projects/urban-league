@@ -3,31 +3,14 @@ import "./SignIn.css";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-import { makeStyles } from "@material-ui/core/styles";
 import { borders } from "@material-ui/system";
 
-// Customized styling der UI-Textfields und Buttons
-
-const useStyles = makeStyles({
-  password: {
-    marginTop: "10px",
-    marginBottom: "10px",
-  },
-});
-
 const SignIn = () => {
-  const classes = useStyles();
   return (
     <div id="backgroundSignIn" className="background">
       <div id="formSignIn">
+        <TextField id="filled-basic" label="Email" variant="outlined" />
         <TextField
-          className={classes.email}
-          id="filled-basic"
-          label="Email"
-          variant="outlined"
-        />
-        <TextField
-          className={classes.password}
           id="filled-basic"
           label="Password"
           variant="outlined"
@@ -35,7 +18,6 @@ const SignIn = () => {
         />
 
         <Button
-          className={classes.button}
           size="large"
           variant="contained"
           color="error"
