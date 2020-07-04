@@ -14,9 +14,9 @@ function App() {
     <ThemeProvider theme={theme}>
       <div id="App">
         <SignIn />
-        {/* <CourtCard /> */}
-        {/* <Home /> */}
-        {/* <CourtDetails /> */}
+        {<CourtCard />}
+        {<Home />}
+        {<CourtDetails />}
       </div>
     </ThemeProvider>
   );
