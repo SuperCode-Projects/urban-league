@@ -71,13 +71,8 @@
   color: black;
 }
 
-#RateIt p,
-.Rating p {
-  margin: 0px;
-}
-
-.CourtCardBig p {
-  margin-top: 20px;
+#RateIt p {
+  margin: 0;
 }
 
 .CourtButtons {

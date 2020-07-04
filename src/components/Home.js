@@ -23,6 +23,8 @@ const Home = () => {
         variant="outlined"
       />
 
+      <CourtCard />
+
       <div id="divIconList">
         <IconList />
       </div>

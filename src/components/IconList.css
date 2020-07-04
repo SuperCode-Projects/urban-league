@@ -15,4 +15,10 @@
   justify-content: space-evenly;
   background-color: white;
   margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+p {
+  margin: 0;
 }

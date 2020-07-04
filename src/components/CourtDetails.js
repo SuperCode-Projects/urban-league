@@ -18,11 +18,15 @@ const CourtDetails = () => {
 
       <div className="CourtCardBig">
         <h1 id="courtName">Milano Academy</h1>
+
+        {/* TODO: Replace H1 with Typography Material UI */}
+
         <div className="Rating">
           <FontAwesomeIcon icon={faStar} className="RatingOrange" />
           <p className="RatingNum">4.5</p>
           <p className="CourtAdress">· 4291 Rogahn Terrace</p>
         </div>
+
         <p className="CourtDescription">
           Modern football field, based on the football academy of the AC Milan.
           Open to everyone since 2017. Free amateur friday tournaments.
