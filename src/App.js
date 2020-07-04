@@ -13,10 +13,10 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div id="App">
-        <SignIn />
+        {/* <SignIn /> */}
         {/* <CourtCard /> */}
         {/* <Home /> */}
-        {/* <CourtDetails /> */}
+        <CourtDetails />
       </div>
     </ThemeProvider>
   );
