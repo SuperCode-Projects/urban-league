@@ -36,6 +36,7 @@ export default createMuiTheme({
         color: "white",
         height: "40px",
       },
+
       sizeLarge: {
         borderRadius: "20px",
         backgroundColor: lightBlue[500],

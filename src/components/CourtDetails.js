@@ -17,7 +17,7 @@ const CourtDetails = () => {
       <img className="CourtPic" src="./images/soccer-field_example.jpg"></img>
 
       <div className="CourtCardBig">
-        <h1>Milano Academy</h1>
+        <h1 id="courtName">Milano Academy</h1>
         <div className="Rating">
           <FontAwesomeIcon icon={faStar} className="RatingOrange" />
           <p className="RatingNum">4.5</p>
@@ -27,9 +27,11 @@ const CourtDetails = () => {
           Modern football field, based on the football academy of the AC Milan.
           Open to everyone since 2017. Free amateur friday tournaments.
         </p>
-        <button>Natural Grass</button>
-        <button>40x70m</button>
-        <button>Outdoor</button>
+        <div id="buttonList">
+          <button className="buttonGreen">Natural Grass</button>
+          <button className="buttonGreen">40x70m</button>
+          <button className="buttonGreen">Outdoor</button>
+        </div>
         <p>POSSIBLE SPORTS</p>
         <IconList />
         <div id="RateIt">
