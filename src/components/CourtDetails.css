@@ -5,8 +5,15 @@
   border-top-right-radius: 20px;
 }
 
-.Rating {
+.Rating,
+#RateIt,
+.CourtButtons {
+  width: 70%;
+  height: 10%;
   display: flex;
+  align-items: center;
+  justify-content: left;
+  color: orange;
 }
 
 .RatingOrange {
@@ -15,4 +22,60 @@
 
 .RatingBlue {
   color: lightBlue;
+}
+
+.RatingBlue:hover {
+  color: orange;
+}
+
+.RatingNum {
+  margin: 0;
+  margin-left: 5px;
+}
+
+.CourtAdress {
+  color: gray;
+  margin: 0;
+  margin-left: 5px;
+}
+
+.CourtCardBig {
+  background-color: white;
+  height: 65%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-radius: 20px;
+  text-align: left;
+}
+
+.CourtCardBig > * {
+  margin-left: 20px;
+  margin-right: 40px;
+}
+
+.CourtDescription {
+  line-height: 2.5vh;
+  margin-top: 0;
+}
+
+#RateIt {
+  width: 65%;
+  height: 15%;
+  justify-content: space-between;
+  color: black;
+}
+
+#RateIt p {
+  margin: 0;
+}
+
+.CourtButtons {
+  width: 85%;
+  justify-content: space-between;
+}
+
+.Arrow {
+  color: white;
+  margin-left: 10px;
 }

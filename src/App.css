@@ -10,9 +10,14 @@ html {
   border: solid grey 1px;
   border-radius: 20px;
   text-align: center;
+  position: relative;
 }
 
 p {
+  margin: 0;
+}
+
+#account {
   color: white;
 }
 

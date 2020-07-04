@@ -31,8 +31,10 @@ export default createMuiTheme({
         color: "white",
       },
       sizeSmall: {
-        borderRadius: "10px",
+        borderRadius: "20px",
         backgroundColor: orange[400],
+        color: "white",
+        height: "40px",
       },
       sizeLarge: {
         borderRadius: "20px",

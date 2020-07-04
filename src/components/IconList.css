@@ -4,12 +4,11 @@
 }
 
 #iconlist img:hover {
-  scale: 1.1;
   opacity: 1;
 }
 
 #iconlist {
-  width: 100%;
+  width: 90%;
   height: 50px;
   display: flex;
   align-items: center;

@@ -33,7 +33,7 @@ const SignIn = () => {
       </a>
       <br></br>
       <a href="#">
-        <p>
+        <p id="account">
           Noch keinen Accout? <br></br>
           Jetzt registrieren
         </p>
