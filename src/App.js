@@ -9,17 +9,19 @@ import CourtCard from "./components/CourtCard";
 import Home from "./components/Home";
 import CourtDetails from "./components/CourtDetails";
 import SignUp from "./components/SignUp";
+import Account from "./components/Account";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <div id="App">
-        <SignIn />
+        {/* <SignIn /> */}
         {/* <CourtCard /> */}
         {/* <Home /> */}
         {/* <CourtCard /> */}
         {/* <SignUp />
         <CourtDetails /> */}
+        <Account />
       </div>
     </ThemeProvider>
   );

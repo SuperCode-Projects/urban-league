@@ -1,0 +1,23 @@
+#Pic_round {
+  position: relative;
+}
+
+#userimage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-image: url(/images/userpicture_example.jpg);
+  background-position: cover;
+  background-color: ;
+  object-fit: contain;
+  background-size: 150px;
+}
+
+h2,
+h3 {
+  margin: 0;
+}
+
+h3 {
+  margin-bottom: 30px;
+}
