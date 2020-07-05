@@ -8,6 +8,7 @@ import SignIn from "./components/SignIn";
 import CourtCard from "./components/CourtCard";
 import Home from "./components/Home";
 import CourtDetails from "./components/CourtDetails";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         {/* <CourtCard /> */}
         {/* <Home /> */}
         {/* <CourtCard /> */}
-        <CourtDetails />
+        <SignUp />
+        {/* <CourtDetails /> */}
       </div>
     </ThemeProvider>
   );
