@@ -15,7 +15,6 @@
 }
 
 #forgotPassword {
-  text-decoration: none;
   color: #56ccf2;
   font-size: 0.8em;
 }
@@ -23,4 +22,15 @@
 p {
   font-size: 0.8em;
   margin-top: 50px;
+}
+
+#account {
+  margin-top: 60px;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
 }

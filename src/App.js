@@ -14,12 +14,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div id="App">
-        {/* <SignIn /> */}
+        <SignIn />
         {/* <CourtCard /> */}
         {/* <Home /> */}
         {/* <CourtCard /> */}
-        <SignUp />
-        {/* <CourtDetails /> */}
+        {/* <SignUp />
+        <CourtDetails /> */}
       </div>
     </ThemeProvider>
   );
