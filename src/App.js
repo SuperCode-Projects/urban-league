@@ -10,6 +10,7 @@ import Home from "./components/Home";
 import CourtDetails from "./components/CourtDetails";
 import SignUp from "./components/SignUp";
 import Account from "./components/Account";
+import Addcourt from "./components/AddCourt";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         {/* <CourtCard /> */}
         {/* <SignUp />
         <CourtDetails /> */}
-        <Account />
+        {/* <Account /> */}
+        <Addcourt />
       </div>
     </ThemeProvider>
   );
