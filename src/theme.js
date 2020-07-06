@@ -20,7 +20,7 @@ export default createMuiTheme({
           "& fieldset": {
             borderRadius: "20px",
             height: "2.8em",
-            backgroundColor: "white",
+            // backgroundColor: "white",
           },
         },
       },
@@ -43,9 +43,9 @@ export default createMuiTheme({
       },
     },
   },
-  props: {
-    MuiTextField: {
-      borderRadius: "20px",
-    },
-  },
+  // props: {
+  //   MuiTextField: {
+  //     borderRadius: "20px",
+  //   },
+  // },
 });
