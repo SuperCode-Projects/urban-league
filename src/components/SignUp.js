@@ -11,9 +11,7 @@ const SignUp = () => {
       <div className="greenWithPic">
         {/* Icon X */}
         <div id="text">
-          <p>X</p>
           <p className="p_big">Profile</p>
-          <p>Logout</p>
         </div>
         <div id="Pic_round">
           <div id="halfcircle">
