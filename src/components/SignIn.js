@@ -2,11 +2,14 @@ import React, { Component } from "react";
 import "./SignIn.css";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { Link, Redirect } from "react-router-dom";
 
 import { borders } from "@material-ui/system";
 import { auth } from "../firebase";
+import { UserContext } from "../providers/UserProvider";
 
 class SignIn extends Component {
+  static contextType = UserContext;
 
   componentDidMount() {
     this.setState({ email: "", password: "" });
@@ -26,6 +29,7 @@ class SignIn extends Component {
   render() {
     return (
       <div id="backgroundSignIn" className="background">
+        {this.context && this.context.uid ? <Redirect to="/" /> : ""}
         <div id="formSignIn">
           <TextField
             id="filled-basic"
@@ -57,12 +61,12 @@ class SignIn extends Component {
           Forgot your Password?
       </a>
         <br></br>
-        <a href="#">
+        <Link to="signup">
           <p id="account">
             Noch keinen Accout? <br></br>
           Jetzt registrieren
         </p>
-        </a>
+        </Link>
       </div>
     );
   }
