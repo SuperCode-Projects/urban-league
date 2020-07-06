@@ -6,13 +6,15 @@ import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import { UserContext } from "../providers/UserProvider";
 import { Redirect } from "react-router-dom";
+import Map from "./Map";
 
 class Home extends Component {
-  static contextType = UserContext
-  
+	static contextType = UserContext
+
 	render() {
 		return (
 			<div id="backgroundHome" className="background">
+				<Map />
 				{
 					!this.context || !this.context.uid ? <Redirect to="signin" /> : ""
 				}
