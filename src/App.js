@@ -11,20 +11,23 @@ import CourtDetails from "./components/CourtDetails";
 import SignUp from "./components/SignUp";
 import Account from "./components/Account";
 import Addcourt from "./components/AddCourt";
+import UserProvider from "./providers/UserProvider";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div id="App">
-        {/* <SignIn /> */}
-        {/* <CourtCard /> */}
-        {/* <Home /> */}
-        {/* <CourtCard /> */}
-        {/* <SignUp />
-        <CourtDetails /> */}
-        {/* <Account /> */}
-        <Addcourt />
-      </div>
+      <UserProvider>
+        <div id="App">
+          {/* <SignIn />
+        <CourtCard />
+        <Home />
+      <CourtCard /> */}
+          <SignUp />
+          {/* <CourtDetails /> */}
+        <Account />
+      {/* <Addcourt /> */}
+        </div>
+      </UserProvider>
     </ThemeProvider>
   );
 }
