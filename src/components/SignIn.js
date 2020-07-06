@@ -13,16 +13,15 @@ class SignIn extends Component {
   }
 
   handleSignInClicked = async () => {
+    console.log("Signing in with", this.state)
     await auth.signInWithEmailAndPassword(this.state.email, this.state.password);
+
   }
 
-  handleEmailChanged = e => {
-    this.setState({ email: e.target.value })
-  }
+  handleEmailChanged = e => this.setState({ email: e.target.value });
 
-  handlePasswordChanged = e => {
-    this.setState({ password: e.target.value })
-  }
+  handlePasswordChanged = e => this.setState({ password: e.target.value });
+
 
   render() {
     return (
@@ -32,7 +31,7 @@ class SignIn extends Component {
             id="filled-basic"
             label="Email"
             variant="outlined"
-            onChange={this.handlePasswordChanged}
+            onChange={this.handleEmailChanged}
           />
           <TextField
             id="filled-basic"

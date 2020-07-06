@@ -15,17 +15,17 @@ import UserProvider, { UserContext } from "./providers/UserProvider";
 
 
 class App extends Component {
-  static contextType = UserContext;
   render() {
     return (
       <ThemeProvider theme={theme}>
         <UserProvider>
           <div id="App">
-            {this.context && this.context.uid ? <Account /> : <SignIn />}
-            {/* <SignIn />
-        <CourtCard />
-        <Home />
-      <CourtCard /> */}
+            {/* <CourtCard /> */}
+            <UserContext.Consumer>
+              {user => user && user.uid ? <Home /> : <SignIn />}
+            </UserContext.Consumer>
+            {/* <Home /> */}
+            {/* <CourtCard /> */}
             {/* <SignUp /> */}
             {/* <CourtDetails /> */}
             {/* <Account /> */}
