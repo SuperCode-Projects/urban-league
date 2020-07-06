@@ -3,8 +3,9 @@ import "./SignUp.css";
 import "./CourtDetails.css";
 import TextField from "@material-ui/core/TextField";
 import IconList from "./IconList";
+import "./AddCourt.css";
 
-const Addcourt = () => {
+const AddCourt = () => {
   return (
     <div className="background">
       <div className="greenWithPic">
@@ -35,10 +36,9 @@ const Addcourt = () => {
       <IconList />
       <div id="newsletter-check"></div>
       <h4>DETAILS</h4>
-      <div id="buttonList">
-        <button className="buttonGreen" id="buttonList_newCourt">
-          Natural Grass
-        </button>
+
+      <div id="buttonList" className="buttonList_newCourt">
+        <button className="buttonGreen">Natural Grass</button>
         <button className="buttonGreen">Concrete</button>
         <button className="buttonGreen">Rubber</button>
       </div>
@@ -49,4 +49,4 @@ const Addcourt = () => {
   );
 };
 
-export default Addcourt;
+export default AddCourt;

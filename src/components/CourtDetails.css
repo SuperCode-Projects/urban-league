@@ -98,9 +98,10 @@
   padding-right: 10px;
   font-size: 0.8em;
   color: grey;
+  outline: none;
+  background-color: rgb(208, 236, 208);
 }
 
 .buttonGreen:hover {
-  color: green;
-  background-color: rgb(212, 243, 212);
+  background-color: #70bb8c;
 }
