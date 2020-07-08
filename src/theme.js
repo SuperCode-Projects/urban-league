@@ -20,7 +20,11 @@ export default createMuiTheme({
           "& fieldset": {
             borderRadius: "20px",
             height: "2.8em",
+            backgroundColor: "white"
           },
+          "& .MuiOutlinedInput-input": {
+            zIndex: 1
+          }
         },
       },
     },
