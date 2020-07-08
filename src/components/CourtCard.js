@@ -7,6 +7,7 @@ import {
   faArrowAltCircleRight,
 } from "@fortawesome/free-solid-svg-icons";
 import IconList from "./IconList";
+import { Link } from "react-router-dom";
 
 const CourtCard = () => {
   return (
@@ -15,10 +16,19 @@ const CourtCard = () => {
         className="CourtPicSmall"
         src="./images/soccer-field_example.jpg"
       ></img>
+
       <div className="CourtCardDescription">
         <h3>Milano Academy</h3>
-        <p>Adress...</p>
-        <Button size="small" variant="contained" type="submit" id="buttonLogIn">
+        <p>4291 Rough Terasse</p>
+        <div id="RateIt">
+          <FontAwesomeIcon icon={faStar} className="RatingOrange" />
+          <FontAwesomeIcon icon={faStar} className="RatingOrange" />
+          <FontAwesomeIcon icon={faStar} className="RatingOrange" />
+          <FontAwesomeIcon icon={faStar} className="RatingBlue" />
+          <FontAwesomeIcon icon={faStar} className="RatingBlue" />
+        </div>
+
+        <Button size="small" variant="contained" type="submit" id="buttonRoute">
           ROUTE
           <FontAwesomeIcon icon={faArrowAltCircleRight} className="Arrow" />
         </Button>

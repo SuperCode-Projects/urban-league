@@ -30,3 +30,16 @@
 p {
   margin: 0;
 }
+
+.CourtCardDescription h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.CourtCardDescription p {
+  margin-bottom: 10px;
+}
+
+#buttonRoute {
+  margin-top: 10px;
+}

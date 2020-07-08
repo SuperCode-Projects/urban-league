@@ -6,6 +6,7 @@ import IconList from "./IconList";
 import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import { UserContext } from "../providers/UserProvider";
+import { Link } from "react-router-dom";
 
 class Account extends Component {
   componentDidMount() {
@@ -22,14 +23,16 @@ class Account extends Component {
           <div id="text">
             <p id="edit">Edit</p>
             <p className="p_big">Profile</p>
-            <p id="logout">Logout</p>
+            <Link to="/signin">
+              <p id="logout">Logout</p>
+            </Link>
           </div>
           <div id="Pic_round">
             <div id="userimage"></div>
           </div>
         </div>
         <div id="formSignUp">
-          <h2>Victoria Roberts</h2>
+          <h2>{this.context && this.context.displayName}</h2>
           <h3>{this.context && this.context.email}</h3>
           <TextField
             id="filled-basic"
@@ -48,14 +51,21 @@ class Account extends Component {
           />
           <p>
             I would like to receive your newsletter and other promotional stuff
-        </p>
+          </p>
         </div>
-        <Button size="small" variant="contained" type="submit" id="buttonSave">
-          SAVE
-      </Button>
+        <Link to="/">
+          <Button
+            size="small"
+            variant="contained"
+            type="submit"
+            id="buttonSave"
+          >
+            SAVE
+          </Button>
+        </Link>
       </div>
     );
   }
-};
+}
 
 export default Account;
