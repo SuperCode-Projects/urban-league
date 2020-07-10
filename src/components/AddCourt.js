@@ -10,7 +10,6 @@ const AddCourt = () => {
   return (
     <div className="background">
       <div className="greenWithPic">
-        {/* Icon X */}
         <div id="text">
           <Link to="/">
             <p>X</p>{" "}
@@ -26,16 +25,10 @@ const AddCourt = () => {
       </div>
       <div id="formSignUp">
         <TextField id="filled-basic" label="Name" variant="outlined" />
-        <TextField
-          id="outlined-multiline-static"
-          label="Description"
-          multiline
-          rows={2}
-          defaultValue="Please describe the court..."
-          variant="outlined"
-        />
+        <TextField id="filled-basic" label="Adress" variant="outlined" />
+        <TextField id="filled-basic" label="Description" variant="outlined" />
       </div>
-      <h4>POSSIBLE SPORTS</h4>
+      <h4 id="lessMargin">POSSIBLE SPORTS</h4>
       <IconList />
       <div id="newsletter-check"></div>
       <h4>DETAILS</h4>

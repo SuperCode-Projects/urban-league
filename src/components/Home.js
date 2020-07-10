@@ -56,7 +56,7 @@ class Home extends Component {
                 <FontAwesomeIcon icon={faPlus} />
               </Button>
             </Link>
-            <Link to="/account">
+            <Link to="#">
               <Button
                 size="small"
                 variant="contained"
