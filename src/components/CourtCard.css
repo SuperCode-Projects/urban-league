@@ -1,10 +1,10 @@
 .CourtCardDiv {
-  height: 20%;
+  height: 24%;
   width: 80%;
   border-radius: 20px;
   background-color: white;
   position: absolute;
-  bottom: 15%;
+  bottom: 12%;
   right: auto;
   left: 10%;
   display: flex;
@@ -32,14 +32,22 @@ p {
 }
 
 .CourtCardDescription h3 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 8px;
+  margin-bottom: 6px;
 }
 
 .CourtCardDescription p {
-  margin-bottom: 10px;
+  margin-bottom: 3px;
 }
 
-#buttonRoute {
-  margin-top: 10px;
+#buttonDetails {
+  margin-top: 6px;
+}
+
+Link:visited {
+  color: orange;
+}
+
+Link:active {
+  color: black;
 }

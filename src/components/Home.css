@@ -20,3 +20,12 @@
   display: flex;
   justify-content: space-around;
 }
+
+#ButtonListHome {
+  display: flex;
+  height: 200px;
+  margin-left: 10px;
+  justify-content: space-between;
+  flex-direction: column;
+  border: solid grey 1px;
+}

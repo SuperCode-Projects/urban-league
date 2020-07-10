@@ -14,12 +14,12 @@ const CourtCard = () => {
     <div className="CourtCardDiv">
       <img
         className="CourtPicSmall"
-        src="./images/soccer-field_example.jpg"
+        src="./images/Fussballplatz-Vagedesstrasse.png"
       ></img>
 
       <div className="CourtCardDescription">
-        <h3>Milano Academy</h3>
-        <p>4291 Rough Terasse</p>
+        <h3>Fussballplatz Vagedesstraße</h3>
+        <p>Vagedesstraße 21, 40479 Düsseldorf</p>
         <div id="RateIt">
           <FontAwesomeIcon icon={faStar} className="RatingOrange" />
           <FontAwesomeIcon icon={faStar} className="RatingOrange" />
@@ -27,11 +27,17 @@ const CourtCard = () => {
           <FontAwesomeIcon icon={faStar} className="RatingBlue" />
           <FontAwesomeIcon icon={faStar} className="RatingBlue" />
         </div>
-
-        <Button size="small" variant="contained" type="submit" id="buttonRoute">
-          ROUTE
-          <FontAwesomeIcon icon={faArrowAltCircleRight} className="Arrow" />
-        </Button>
+        <Link to="/courtdetails">
+          <Button
+            size="small"
+            variant="contained"
+            type="submit"
+            id="buttonDetails"
+          >
+            DETAILS
+            <FontAwesomeIcon icon={faArrowAltCircleRight} className="Arrow" />
+          </Button>
+        </Link>
       </div>
     </div>
   );

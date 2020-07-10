@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import IconList from "./IconList";
 import CourtCard from "./CourtCard";
+import Time from "./Time";
 import "./Home.css";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
@@ -10,7 +11,12 @@ import { Redirect } from "react-router-dom";
 import Map from "./Map";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faStar,
+  faUser,
+  faPlus,
+  faLocationArrow,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 class Home extends Component {
@@ -28,7 +34,7 @@ class Home extends Component {
             variant="outlined"
             id="searchCity"
           />
-
+          {/* <div id="ButtonListHome"> */}
           <Link to="/account">
             <Button
               size="small"
@@ -37,12 +43,36 @@ class Home extends Component {
               id="gotoProfil"
               //   onClick={this.handleSignUpClicked}
             >
-              <FontAwesomeIcon icon={faUser} className="gotoProfil" />
+              <FontAwesomeIcon icon={faUser} className="gotoProfilButton" />
+            </Button>
+          </Link>
+
+          <Link to="/account">
+            <Button
+              size="small"
+              variant="contained"
+              type="submit"
+              id="addCourtButton"
+              //   onClick={this.handleSignUpClicked}
+            >
+              <FontAwesomeIcon icon={faPlus} className="gotoProfil" />
+            </Button>
+          </Link>
+          <Link to="/account">
+            <Button
+              size="small"
+              variant="contained"
+              type="submit"
+              id="addCourtButton"
+              //   onClick={this.handleSignUpClicked}
+            >
+              <FontAwesomeIcon icon={faLocationArrow} className="gotoProfil" />
             </Button>
           </Link>
         </div>
 
         <CourtCard />
+        {/* <Time /> */}
 
         <div id="divIconList">
           <IconList />

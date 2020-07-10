@@ -8,31 +8,36 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
   faArrowAltCircleRight,
+  faArrowAltCircleLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import IconList from "./IconList";
+import { Link } from "react-router-dom";
 
 const CourtDetails = () => {
   return (
     <div className="background">
-      <img className="CourtPic" src="./images/soccer-field_example.jpg"></img>
+      <img
+        className="CourtPic"
+        src="./images/Fussballplatz-Vagedesstrasse.png"
+      ></img>
 
       <div className="CourtCardBig">
-        <h1 id="courtName">Milano Academy</h1>
+        <h1 id="courtName">Fußballplatz Vagedesstraße</h1>
 
         {/* TODO: Replace H1 with Typography Material UI */}
 
         <div className="Rating">
           <FontAwesomeIcon icon={faStar} className="RatingOrange" />
           <p className="RatingNum">4.5</p>
-          <p className="CourtAdress">· 4291 Rogahn Terrace</p>
+          <p className="CourtAdress">Vagedesstraße 21, 40479 Düsseldorf</p>
         </div>
 
         <p className="CourtDescription">
-          Modern football field, based on the football academy of the AC Milan.
-          Open to everyone since 2017. Free amateur friday tournaments.
+          Netter kleiner Fußballplatz mit hohem Zaun und zwei Metall-Toren.
+          Wiese drum herum und Parkmöglichkeiten.
         </p>
         <div id="buttonList">
-          <button className="buttonGreen">Natural Grass</button>
+          <button className="buttonGreen">Gravel field</button>
           <button className="buttonGreen">40x70m</button>
           <button className="buttonGreen">Outdoor</button>
         </div>
@@ -47,24 +52,28 @@ const CourtDetails = () => {
           <FontAwesomeIcon icon={faStar} className="RatingBlue" />
         </div>
         <div className="CourtButtons">
-          <Button
-            size="small"
-            variant="contained"
-            type="submit"
-            id="buttonLogIn"
-          >
-            ROUTE{" "}
-            <FontAwesomeIcon icon={faArrowAltCircleRight} className="Arrow" />
-          </Button>
-          <Button
-            size="small"
-            variant="contained"
-            type="submit"
-            id="buttonLogIn"
-          >
-            CHECK IN{" "}
-            <FontAwesomeIcon icon={faArrowAltCircleRight} className="Arrow" />
-          </Button>
+          <Link to="/">
+            <Button
+              size="small"
+              variant="contained"
+              type="submit"
+              id="buttonCheckIn"
+            >
+              BACK{" "}
+              <FontAwesomeIcon icon={faArrowAltCircleLeft} className="Arrow" />
+            </Button>
+          </Link>
+          <Link to="/">
+            <Button
+              size="small"
+              variant="contained"
+              type="submit"
+              id="buttonCheckIn"
+            >
+              CHECK IN{" "}
+              <FontAwesomeIcon icon={faArrowAltCircleRight} className="Arrow" />
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

@@ -12,6 +12,7 @@ import CourtDetails from "./components/CourtDetails";
 import SignUp from "./components/SignUp";
 import Account from "./components/Account";
 import AddCourt from "./components/AddCourt";
+import Time from "./components/Time";
 import UserProvider, { UserContext } from "./providers/UserProvider";
 
 class App extends Component {
@@ -36,8 +37,11 @@ class App extends Component {
               <Route exact path="/addcourt">
                 <AddCourt />
               </Route>
-              <Route exact path="/CourtDetails">
+              <Route exact path="/courtdetails">
                 <CourtDetails />
+              </Route>
+              <Route exact path="/time">
+                <Time />
               </Route>
               {/* <UserContext.Consumer>
 								{(user) => (user && user.uid ? <Home /> : <SignIn />)}
