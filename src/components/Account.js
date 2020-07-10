@@ -6,11 +6,16 @@ import IconList from "./IconList";
 import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import { UserContext } from "../providers/UserProvider";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
+=======
+import { auth } from  "../firebase";
+>>>>>>> 5582ac6410595134a7c2e56f4108055588db4c4e
 
 class Account extends Component {
   componentDidMount() {
     console.log(this.context);
+
   }
 
   static contextType = UserContext;
@@ -23,9 +28,13 @@ class Account extends Component {
           <div id="text">
             <p id="edit">Edit</p>
             <p className="p_big">Profile</p>
+<<<<<<< HEAD
             <Link to="/signin">
               <p id="logout">Logout</p>
             </Link>
+=======
+            <button onClick={() => auth.signOut()}id="logout">Logout</button>
+>>>>>>> 5582ac6410595134a7c2e56f4108055588db4c4e
           </div>
           <div id="Pic_round">
             <div id="userimage"></div>
