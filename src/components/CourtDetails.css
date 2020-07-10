@@ -5,6 +5,13 @@
   border-top-right-radius: 20px;
 }
 
+#buttonPlayer {
+  position: absolute;
+  left: 40%;
+  right: auto;
+  margin-top: -230px;
+}
+
 .Rating,
 #RateIt,
 .CourtButtons {

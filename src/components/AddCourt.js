@@ -4,6 +4,7 @@ import "./CourtDetails.css";
 import TextField from "@material-ui/core/TextField";
 import IconList from "./IconList";
 import "./AddCourt.css";
+import { Link } from "react-router-dom";
 
 const AddCourt = () => {
   return (
@@ -11,7 +12,9 @@ const AddCourt = () => {
       <div className="greenWithPic">
         {/* Icon X */}
         <div id="text">
-          <p>X</p>
+          <Link to="/">
+            <p>X</p>{" "}
+          </Link>
           <p className="p_big">New Court</p>
           <p>Save</p>
         </div>
@@ -28,7 +31,7 @@ const AddCourt = () => {
           label="Description"
           multiline
           rows={2}
-          defaultValue="Default Value"
+          defaultValue="Please describe the court..."
           variant="outlined"
         />
       </div>
@@ -43,8 +46,10 @@ const AddCourt = () => {
         <button className="buttonGreen">Rubber</button>
       </div>
       <h4>SIZE</h4>
-      <button>Lenght</button>
-      <button>Width</button>
+      <div id="sizeField">
+        <TextField id="filled-basic" label="Lenght" variant="outlined" />
+        <TextField id="filled-basic" label="Width" variant="outlined" />
+      </div>
     </div>
   );
 };

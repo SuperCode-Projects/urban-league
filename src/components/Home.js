@@ -34,43 +34,44 @@ class Home extends Component {
             variant="outlined"
             id="searchCity"
           />
-          {/* <div id="ButtonListHome"> */}
-          <Link to="/account">
-            <Button
-              size="small"
-              variant="contained"
-              type="submit"
-              id="gotoProfil"
-              //   onClick={this.handleSignUpClicked}
-            >
-              <FontAwesomeIcon icon={faUser} className="gotoProfilButton" />
-            </Button>
-          </Link>
-
-          <Link to="/account">
-            <Button
-              size="small"
-              variant="contained"
-              type="submit"
-              id="addCourtButton"
-              //   onClick={this.handleSignUpClicked}
-            >
-              <FontAwesomeIcon icon={faPlus} className="gotoProfil" />
-            </Button>
-          </Link>
-          <Link to="/account">
-            <Button
-              size="small"
-              variant="contained"
-              type="submit"
-              id="addCourtButton"
-              //   onClick={this.handleSignUpClicked}
-            >
-              <FontAwesomeIcon icon={faLocationArrow} className="gotoProfil" />
-            </Button>
-          </Link>
+          <div id="Homebuttons">
+            {" "}
+            <Link to="/account">
+              <Button
+                size="small"
+                variant="contained"
+                type="submit"
+                id="gotoAccount"
+              >
+                <FontAwesomeIcon icon={faUser} />
+              </Button>
+            </Link>
+            <Link to="/addcourt">
+              <Button
+                size="small"
+                variant="contained"
+                type="submit"
+                id="addCourtButton"
+              >
+                <FontAwesomeIcon icon={faPlus} />
+              </Button>
+            </Link>
+            <Link to="/account">
+              <Button
+                size="small"
+                variant="contained"
+                type="submit"
+                id="myLocation"
+                //   onClick={this.handleSignUpClicked}
+              >
+                <FontAwesomeIcon
+                  icon={faLocationArrow}
+                  className="gotoProfil"
+                />
+              </Button>
+            </Link>
+          </div>
         </div>
-
         <CourtCard />
         {/* <Time /> */}
 

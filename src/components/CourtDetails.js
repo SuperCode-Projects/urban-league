@@ -22,6 +22,14 @@ const CourtDetails = () => {
       ></img>
 
       <div className="CourtCardBig">
+        <Button
+          size="small"
+          variant="contained"
+          type="submit"
+          id="buttonPlayer"
+        >
+          Player 0
+        </Button>
         <h1 id="courtName">Fußballplatz Vagedesstraße</h1>
 
         {/* TODO: Replace H1 with Typography Material UI */}

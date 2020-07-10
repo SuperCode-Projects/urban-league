@@ -21,11 +21,13 @@
   justify-content: space-around;
 }
 
-#ButtonListHome {
+#Homebuttons {
   display: flex;
-  height: 200px;
-  margin-left: 10px;
-  justify-content: space-between;
+  height: 250px;
+  margin-top: 100px;
+  justify-content: space-around;
   flex-direction: column;
-  border: solid grey 1px;
+  position: absolute;
+  left: auto;
+  right: 25px;
 }

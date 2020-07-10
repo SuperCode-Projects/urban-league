@@ -23,6 +23,8 @@
 
 .p_big {
   font-size: 2em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #Pic_round {
@@ -50,7 +52,7 @@
 #formSignUp {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 70px;
+  margin-top: 60px;
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -76,7 +78,20 @@ Checkbox {
   text-align: left;
 }
 
-#buttonSave {
+/* #buttonSave {
   margin-left: 70%;
   margin-top: 5%;
+} */
+
+#Buttons {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#ArrowBack {
+  margin-right: 8px;
 }

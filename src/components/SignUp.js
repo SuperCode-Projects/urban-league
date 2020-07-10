@@ -4,9 +4,12 @@ import TextField from "@material-ui/core/TextField";
 import IconList from "./IconList";
 import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import { auth, firestore } from "../firebase";
 import { UserContext } from "../providers/UserProvider";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+
 class SignUp extends Component {
   static contextType = UserContext;
   constructor(props) {
@@ -59,11 +62,8 @@ class SignUp extends Component {
       <div className="background">
         {this.context && this.context.uid ? <Redirect to="/" /> : ""}
         <div className="greenWithPic">
-          {/* Icon X */}
           <div id="text">
-            <p>X</p>
-            <p className="p_big">Profile</p>
-            <p>Logout</p>
+            <p className="p_big">Add your Profile</p>
           </div>
           <div id="Pic_round">
             <div id="halfcircle">
@@ -104,15 +104,32 @@ class SignUp extends Component {
             I would like to receive your newsletter and other promotional stuff
           </p>
         </div>
-        <Button
-          size="small"
-          variant="contained"
-          type="submit"
-          id="buttonSave"
-          onClick={this.handleSignUpClicked}
-        >
-          SAVE
-        </Button>
+        <div id="Buttons">
+          <Link to="/">
+            <Button
+              size="small"
+              variant="contained"
+              type="submit"
+              id="buttonBack"
+            >
+              <FontAwesomeIcon
+                icon={faArrowAltCircleLeft}
+                className="Arrow"
+                id="ArrowBack"
+              />
+              BACK
+            </Button>
+          </Link>{" "}
+          <Button
+            size="small"
+            variant="contained"
+            type="submit"
+            id="buttonSave"
+            onClick={this.handleSignUpClicked}
+          >
+            SAVE
+          </Button>
+        </div>
       </div>
     );
   }

@@ -6,16 +6,12 @@ import IconList from "./IconList";
 import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import { UserContext } from "../providers/UserProvider";
-<<<<<<< HEAD
-import { Link } from "react-router-dom";
-=======
-import { auth } from  "../firebase";
->>>>>>> 5582ac6410595134a7c2e56f4108055588db4c4e
+import { Link, Redirect } from "react-router-dom";
+import { auth } from "../firebase";
 
 class Account extends Component {
   componentDidMount() {
     console.log(this.context);
-
   }
 
   static contextType = UserContext;
@@ -23,18 +19,11 @@ class Account extends Component {
   render() {
     return (
       <div className="background">
+        {!this.context ? <Redirect to="/signin" /> : ""}
         <div className="greenWithPic">
-          {/* Icon X */}
           <div id="text">
             <p id="edit">Edit</p>
             <p className="p_big">Profile</p>
-<<<<<<< HEAD
-            <Link to="/signin">
-              <p id="logout">Logout</p>
-            </Link>
-=======
-            <button onClick={() => auth.signOut()}id="logout">Logout</button>
->>>>>>> 5582ac6410595134a7c2e56f4108055588db4c4e
           </div>
           <div id="Pic_round">
             <div id="userimage"></div>
@@ -62,16 +51,28 @@ class Account extends Component {
             I would like to receive your newsletter and other promotional stuff
           </p>
         </div>
-        <Link to="/">
+        <div id="text">
           <Button
             size="small"
             variant="contained"
             type="submit"
             id="buttonSave"
+            onClick={() => auth.signOut()}
+            id="logout"
           >
-            SAVE
+            Logout
           </Button>
-        </Link>
+          <Link to="/">
+            <Button
+              size="small"
+              variant="contained"
+              type="submit"
+              id="buttonSave"
+            >
+              SAVE
+            </Button>
+          </Link>
+        </div>
       </div>
     );
   }
