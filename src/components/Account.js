@@ -6,10 +6,12 @@ import IconList from "./IconList";
 import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import { UserContext } from "../providers/UserProvider";
+import { auth } from  "../firebase";
 
 class Account extends Component {
   componentDidMount() {
     console.log(this.context);
+
   }
 
   static contextType = UserContext;
@@ -22,7 +24,7 @@ class Account extends Component {
           <div id="text">
             <p id="edit">Edit</p>
             <p className="p_big">Profile</p>
-            <p id="logout">Logout</p>
+            <button onClick={() => auth.signOut()}id="logout">Logout</button>
           </div>
           <div id="Pic_round">
             <div id="userimage"></div>
