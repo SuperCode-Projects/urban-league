@@ -50,6 +50,7 @@ class Map extends Component {
             location : "Düsseldorf",
             zoom : 12,
         }
+        this.locationChange = this.locationChange.bind(this); 
     }
     render() {
         return (
