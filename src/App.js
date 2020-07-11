@@ -12,6 +12,7 @@ import CourtDetails from "./components/CourtDetails";
 import SignUp from "./components/SignUp";
 import Account from "./components/Account";
 import AddCourt from "./components/AddCourt";
+import Map from "./components/Map";
 import Time from "./components/Time";
 import UserProvider, { UserContext } from "./providers/UserProvider";
 
@@ -39,6 +40,9 @@ class App extends Component {
               </Route>
               <Route exact path="/courtdetails">
                 <CourtDetails />
+              </Route>
+              <Route exact path="/map">
+                <Map />
               </Route>
               <Route exact path="/time">
                 <Time />

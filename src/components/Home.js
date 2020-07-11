@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import IconList from "./IconList";
 import CourtCard from "./CourtCard";
-import Time from "./Time";
+
 import "./Home.css";
 import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
+
 import Button from "@material-ui/core/Button";
 import { UserContext } from "../providers/UserProvider";
 import { Redirect } from "react-router-dom";
@@ -13,7 +13,6 @@ import ReactDOM from "react-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faStar,
   faUser,
   faPlus,
   faLocationArrow,
