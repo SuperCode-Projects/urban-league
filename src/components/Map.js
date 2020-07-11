@@ -57,7 +57,7 @@ const courtList = [
     courtName: "2222222222222",
     location: { lat: 51.246486, lng: 6.793244 },
     color: "red",
-    courtAddress: "eeeeeeeeeeeeee"
+    courtAddress: "eeeeeeeeeeeeee",
   },
   {
     id: 3,
@@ -69,6 +69,7 @@ const courtList = [
 ];
 
 class Map extends Component {
+  static contextType = UserContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -77,7 +78,7 @@ class Map extends Component {
       zoom: 12,
       CurrentLatitude: 0,
       CurrentLongitude: 0,
-      clickedMarkerId : 1
+      clickedMarkerId: 1,
     };
     this.locationChange = this.locationChange.bind(this);
     this.geocodingCity = this.geocodingCity.bind(this);
@@ -106,28 +107,35 @@ class Map extends Component {
   };
 
   getPosition = () => {
-    Geolocation.getCurrentPosition(info => (this.setState(() => ({CurrentLatitude : info.coords.latitude, CurrentLongitude : info.coords.longitude}))));
-}
-
-setCurrentPosition = () => {
-        this.getPosition();
-        this.setState({ center: { lat: this.state.CurrentLatitude, lng: this.state.CurrentLongitude } });
-        console.log(this.state.CurrentLatitude, this.state.CurrentLongitude);
+    Geolocation.getCurrentPosition((info) =>
+      this.setState(() => ({
+        CurrentLatitude: info.coords.latitude,
+        CurrentLongitude: info.coords.longitude,
+      }))
+    );
   };
 
-  onClickedMarker = (MarkerNumber, MarkerLocation) => { 
-        
-    this.setState(
-        () => ({
-            clickedMarkerId: MarkerNumber,
-            clickedMarkerLocation : MarkerLocation
-    }))
-    console.log(this.state.clickedMarkerId, this.state.clickedMarkerLocation)
+  setCurrentPosition = () => {
     this.getPosition();
-    console.log(this.state.CurrentLatitude, this.state.CurrentLongitude)
-    Geolocation.getCurrentPosition(info => console.log(info));
-}
+    this.setState({
+      center: {
+        lat: this.state.CurrentLatitude,
+        lng: this.state.CurrentLongitude,
+      },
+    });
+    console.log(this.state.CurrentLatitude, this.state.CurrentLongitude);
+  };
 
+  onClickedMarker = (MarkerNumber, MarkerLocation) => {
+    this.setState(() => ({
+      clickedMarkerId: MarkerNumber,
+      clickedMarkerLocation: MarkerLocation,
+    }));
+    console.log(this.state.clickedMarkerId, this.state.clickedMarkerLocation);
+    this.getPosition();
+    console.log(this.state.CurrentLatitude, this.state.CurrentLongitude);
+    Geolocation.getCurrentPosition((info) => console.log(info));
+  };
 
   componentDidMount() {
     this.geocodingCity();
@@ -136,8 +144,9 @@ setCurrentPosition = () => {
 
   render() {
     return (
+      // {!this.context || !this.context.uid ? <Redirect to="signin" /> : ""}
+
       <div className="background">
-        {/* {!this.context || !this.context.uid ? <Redirect to="signin" /> : ""} */}
         <LoadScript googleMapsApiKey={GoogleAPIkey}>
           <div>
             <GoogleMap
@@ -234,11 +243,11 @@ setCurrentPosition = () => {
                   </Button>
                 </Link>
               </div>
-              <CourtCard 
-                    courtName = {courtList[this.state.clickedMarkerId-1].courtName}
-                    courtAddress = {courtList[this.state.clickedMarkerId-1].courtAddress}
-
-
+              <CourtCard
+                courtName={courtList[this.state.clickedMarkerId - 1].courtName}
+                courtAddress={
+                  courtList[this.state.clickedMarkerId - 1].courtAddress
+                }
               />
               {/* <Time /> */}
 
