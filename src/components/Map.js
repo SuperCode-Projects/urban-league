@@ -6,6 +6,42 @@ import { GoogleAPIkey } from '../key';
 import Geocode from "react-geocode";
 import Geolocation from '@react-native-community/geolocation';
 
+const containerStyle={  width: '100%', 
+                        height: '740px'};
+
+const searchBoxStyle={  boxSizing: `border-box`,
+                        border: `1px solid transparent`,
+                        width: `240px`,
+                        height: `32px`,
+                        padding: `0 12px`,
+                        borderRadius: `3px`,
+                        boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
+                        fontSize: `14px`,
+                        outline: `none`,
+                        textOverflow: `ellipses`,
+                        position: "absolute",
+                        left: "50%",
+                        marginLeft: "-120px"};
+
+const buttonStyle={  boxSizing: `border-box`,
+                        border: `1px solid transparent`,
+                        width: `100px`,
+                        height: `32px`,
+                        padding: `0 12px`,
+                        borderRadius: `3px`,
+                        boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
+                        fontSize: `14px`,
+                        outline: `none`,
+                        textOverflow: `ellipses`,
+                        position: "absolute",
+                        left: "75%",
+                        marginLeft: "-120px"};
+
+const courtList = [ {id:1, courtName:"1", location:{lat:51.250695, lng:6.789360}, color:"green", courtSize: " ", checkedIn: 0, courtAddress:"", },
+                    {id:2, courtName:"2", location:{lat:51.246486, lng:6.793244}, color:"red"},
+                    {id:3, courtName:"3", location:{lat:51.248089, lng:6.774877}, color:"blue"} 
+                ];
+
 class Map extends Component {
     constructor(props) {
         super(props);
