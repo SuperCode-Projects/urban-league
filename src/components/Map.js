@@ -81,6 +81,7 @@ class Map extends Component {
       zoom: 12,
     };
   }
+
   render() {
     return (
       <LoadScript googleMapsApiKey={GoogleAPIkey}>
