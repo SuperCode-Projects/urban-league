@@ -106,8 +106,7 @@ class Map extends Component {
     }
 
     componentDidMount() {
-        this.adres();
-        this.getPosition();
+        this.geocodingCity();
     }
 
   render() {
