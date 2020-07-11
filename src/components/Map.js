@@ -14,6 +14,8 @@ import { GoogleAPIkey } from "../key";
 import Geocode from "react-geocode";
 import Geolocation from "@react-native-community/geolocation";
 
+Geocode.setApiKey(`${GoogleAPIkey}`);
+
 const containerStyle = { width: "100%", height: "740px" };
 
 const searchBoxStyle = {
@@ -73,14 +75,40 @@ const courtList = [
 ];
 
 class Map extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      center: { lat: 51.25, lng: 6.78 },
-      location: "Düsseldorf",
-      zoom: 12,
-    };
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            center: { lat: 51.25, lng: 6.78 },
+            location: "Düsseldorf",
+            zoom: 12,
+        };
+        this.locationChange = this.locationChange.bind(this);
+        this.geocodingCity = this.geocodingCity.bind(this); 
+    }
+
+    locationChange = (event) => {
+        this.setState({location: event.target.value});
+    }
+
+    geocodingCity = () => {
+        Geocode.fromAddress(`${this.state.location}`).then(
+            response => {
+                const { lat, lng } = response.results[0].geometry.location;
+                console.log(response.results);
+                console.log(`${this.state.location}`);
+                this.setState({center: {lat: lat, lng: lng}})
+            },
+            error => {
+                console.error(error);
+            }
+        );
+        return;
+    }
+
+    componentDidMount() {
+        this.adres();
+        this.getPosition();
+    }
 
   render() {
     return (
@@ -114,7 +142,7 @@ class Map extends Component {
               value={this.state.location}
               onChange={this.locationChange}
             />
-            <button style={buttonStyle} onClick={this.adres} />
+            <button style={buttonStyle} onClick={this.geocodingCity} />
           </GoogleMap>
         </div>
       </LoadScript>
