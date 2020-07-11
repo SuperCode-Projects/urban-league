@@ -45,24 +45,26 @@ const containerStyle = {
 const courtList = [
   {
     id: 1,
-    courtName: "1",
+    courtName: "1111111111111",
     location: { lat: 51.250695, lng: 6.78936 },
     color: "green",
     courtSize: " ",
     checkedIn: 0,
-    courtAddress: "",
+    courtAddress: "ffffffffffffff",
   },
   {
     id: 2,
-    courtName: "2",
+    courtName: "2222222222222",
     location: { lat: 51.246486, lng: 6.793244 },
     color: "red",
+    courtAddress: "eeeeeeeeeeeeee"
   },
   {
     id: 3,
-    courtName: "3",
+    courtName: "333333333333333",
     location: { lat: 51.248089, lng: 6.774877 },
     color: "blue",
+    courtAddress: "fgfgfgfgnfnfnfgnf",
   },
 ];
 
@@ -74,10 +76,12 @@ class Map extends Component {
       location: "Düsseldorf",
       zoom: 12,
       CurrentLatitude: 0,
-      CurrentLongitude: 0
+      CurrentLongitude: 0,
+      clickedMarkerId : 1
     };
     this.locationChange = this.locationChange.bind(this);
     this.geocodingCity = this.geocodingCity.bind(this);
+    this.onClickedMarker = this.onClickedMarker.bind(this);
   }
 
   locationChange = (event) => {
@@ -110,6 +114,19 @@ setCurrentPosition = () => {
         this.setState({ center: { lat: this.state.CurrentLatitude, lng: this.state.CurrentLongitude } });
         console.log(this.state.CurrentLatitude, this.state.CurrentLongitude);
   };
+
+  onClickedMarker = (MarkerNumber, MarkerLocation) => { 
+        
+    this.setState(
+        () => ({
+            clickedMarkerId: MarkerNumber,
+            clickedMarkerLocation : MarkerLocation
+    }))
+    console.log(this.state.clickedMarkerId, this.state.clickedMarkerLocation)
+    this.getPosition();
+    console.log(this.state.CurrentLatitude, this.state.CurrentLongitude)
+    Geolocation.getCurrentPosition(info => console.log(info));
+}
 
 
   componentDidMount() {
@@ -217,7 +234,12 @@ setCurrentPosition = () => {
                   </Button>
                 </Link>
               </div>
-              <CourtCard />
+              <CourtCard 
+                    courtName = {courtList[this.state.clickedMarkerId-1].courtName}
+                    courtAddress = {courtList[this.state.clickedMarkerId-1].courtAddress}
+
+
+              />
               {/* <Time /> */}
 
               <div id="divIconList">

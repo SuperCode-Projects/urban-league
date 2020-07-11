@@ -9,7 +9,10 @@ import {
 import IconList from "./IconList";
 import { Link } from "react-router-dom";
 
-const CourtCard = () => {
+const CourtCard = props => {
+
+
+
   return (
     <div className="CourtCardDiv">
       <img
@@ -18,8 +21,8 @@ const CourtCard = () => {
       ></img>
 
       <div className="CourtCardDescription">
-        <h3>Fussballplatz Vagedesstraße</h3>
-        <p>Vagedesstraße 21, 40479 Düsseldorf</p>
+        <h3>{props.courtName}</h3>
+        <p>{props.courtAddress}</p>
         <div id="RateIt">
           <FontAwesomeIcon icon={faStar} className="RatingOrange" />
           <FontAwesomeIcon icon={faStar} className="RatingOrange" />
