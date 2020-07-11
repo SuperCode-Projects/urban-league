@@ -41,9 +41,9 @@ class App extends Component {
               <Route exact path="/courtdetails">
                 <CourtDetails />
               </Route>
-              <Route exact path="/home">
-                <Home />
-              </Route>
+              {/* <Route exact path="/home">
+                <Home /> */}
+              {/* </Route> */}
               <Route exact path="/time">
                 <Time />
               </Route>

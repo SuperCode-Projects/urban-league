@@ -24,7 +24,7 @@ p {
   color: white;
 }
 
-@media only screen and (min-width: 415px) {
+@media only screen and (min-width: 415px), screen and (min-height: 740px) {
   .background {
     width: 414px;
     height: 736px;
