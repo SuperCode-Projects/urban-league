@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import { UserContext } from "../providers/UserProvider";
 import { Redirect } from "react-router-dom";
 import Map from "./Map";
+import ReactDOM from "react-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -62,6 +63,7 @@ class Home extends Component {
                 variant="contained"
                 type="submit"
                 id="myLocation"
+
                 //   onClick={this.handleSignUpClicked}
               >
                 <FontAwesomeIcon

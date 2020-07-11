@@ -55,6 +55,9 @@ class SignUp extends Component {
       this.state.password
     );
     console.log("response", response);
+    if (this.state.password < 6) {
+      alert("Your Password must be at least 6 characters long");
+    }
   }
 
   render() {
@@ -90,6 +93,7 @@ class SignUp extends Component {
             variant="outlined"
             type="password"
             onChange={this.handlePasswordChanged}
+            error={this.state && this.state.password.length > 6}
           />
         </div>
         <h4>FAVOURITE SPORTS</h4>
@@ -127,7 +131,7 @@ class SignUp extends Component {
             id="buttonSave"
             onClick={this.handleSignUpClicked}
           >
-            SAVE
+            SIGN UP
           </Button>
         </div>
       </div>

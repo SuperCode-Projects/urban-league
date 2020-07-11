@@ -8,6 +8,12 @@ import { borders } from "@material-ui/system";
 import { auth } from "../firebase";
 import { UserContext } from "../providers/UserProvider";
 
+let showAlert;
+
+showAlert = () => {
+  alert("Function not available");
+};
+
 class SignIn extends Component {
   static contextType = UserContext;
 
@@ -16,15 +22,17 @@ class SignIn extends Component {
   }
 
   handleSignInClicked = async () => {
-    console.log("Signing in with", this.state)
-    await auth.signInWithEmailAndPassword(this.state.email, this.state.password);
+    console.log("Signing in with", this.state);
 
-  }
+    await auth.signInWithEmailAndPassword(
+      this.state.email,
+      this.state.password
+    );
+  };
 
-  handleEmailChanged = e => this.setState({ email: e.target.value });
+  handleEmailChanged = (e) => this.setState({ email: e.target.value });
 
-  handlePasswordChanged = e => this.setState({ password: e.target.value });
-
+  handlePasswordChanged = (e) => this.setState({ password: e.target.value });
 
   render() {
     return (
@@ -54,22 +62,22 @@ class SignIn extends Component {
             onClick={this.handleSignInClicked}
           >
             Log In
-        </Button>
+          </Button>
         </div>
         <br></br>
-        <a href="#" id="forgotPassword">
+        <a href="#" id="forgotPassword" onClick={showAlert}>
           Forgot your Password?
-      </a>
+        </a>
         <br></br>
         <Link to="signup">
           <p id="account">
             Noch keinen Accout? <br></br>
-          Jetzt registrieren
-        </p>
+            Jetzt registrieren
+          </p>
         </Link>
       </div>
     );
   }
-};
+}
 
 export default SignIn;
