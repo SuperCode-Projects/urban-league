@@ -34,6 +34,8 @@ import { GoogleAPIkey } from "../key";
 import Geocode from "react-geocode";
 import Geolocation from "@react-native-community/geolocation";
 
+
+
 Geocode.setApiKey(`${GoogleAPIkey}`);
 
 const containerStyle = {
@@ -43,29 +45,42 @@ const containerStyle = {
 };
 
 const courtList = [
-  {
-    id: 1,
-    courtName: "1111111111111",
-    location: { lat: 51.250695, lng: 6.78936 },
-    color: "green",
-    courtSize: " ",
-    checkedIn: 0,
-    courtAddress: "ffffffffffffff",
-  },
-  {
-    id: 2,
-    courtName: "2222222222222",
-    location: { lat: 51.246486, lng: 6.793244 },
-    color: "red",
-    courtAddress: "eeeeeeeeeeeeee",
-  },
-  {
-    id: 3,
-    courtName: "333333333333333",
-    location: { lat: 51.248089, lng: 6.774877 },
-    color: "blue",
-    courtAddress: "fgfgfgfgnfnfnfgnf",
-  },
+    {id:1, 
+        courtName: "court 1",
+        courtAddress: "Address 1",
+        location: {lat:51.250695, lng:6.789360},
+        courtDescription: "Description 1",
+        courtImage: "https://source.unsplash.com/random/300x200?basketball",
+        courtType: 0,
+        courtSurface: 1,
+        courtLevelOfLiking: 0,
+        courtNumberOfPersonLiked: 0,
+        courtCheckedIn: 0  
+    },
+    {id:2, 
+        courtName: "court 2",
+        courtAddress: "Address 2",
+        location: {lat:51.246486, lng:6.793244},
+        courtDescription: "Description 2",
+        courtImage: "https://source.unsplash.com/random/300x200?football",
+        courtType: 2,
+        courtSurface: 0,
+        courtLevelOfLiking: 0,
+        courtNumberOfPersonLiked: 0,
+        courtCheckedIn: 0  
+    },
+    {id:3, 
+        courtName: "court 3",
+        courtAddress: "Address 3",
+        location: {lat:51.248089, lng:6.774877},
+        courtDescription: "Description 3",
+        courtImage: "https://source.unsplash.com/random/300x200?basketball",
+        courtType: 0,
+        courtSurface: 1,
+        courtLevelOfLiking: 0,
+        courtNumberOfPersonLiked: 0,
+        courtCheckedIn: 0  
+    },
 ];
 
 const mapOptions = {
@@ -170,9 +185,9 @@ class Map extends Component {
                     <Marker
                       key={item.id}
                       position={item.location}
-                      label={item.courtName}
-                      icon={
-                        (URL = `https://img.icons8.com/emoji/48/000000/${item.color}-circle-emoji.png`)
+                      label={item.courtCheckedIn.toString()}
+                      icon={ (item.id == this.state.clickedMarkerId) ? (`https://img.icons8.com/emoji/48/000000/green-circle-emoji.png`):(`https://img.icons8.com/emoji/48/000000/yellow-circle-emoji.png`)
+                        
                       }
                       clusterer={clusterer}
                       onClick={() =>
@@ -253,9 +268,8 @@ class Map extends Component {
               </div>
               <CourtCard
                 courtName={courtList[this.state.clickedMarkerId - 1].courtName}
-                courtAddress={
-                  courtList[this.state.clickedMarkerId - 1].courtAddress
-                }
+                courtAddress={courtList[this.state.clickedMarkerId - 1].courtAddress}
+                image={courtList[this.state.clickedMarkerId - 1].courtImage}
               />
               {/* <Time /> */}
 

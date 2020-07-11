@@ -17,7 +17,8 @@ const CourtCard = props => {
     <div className="CourtCardDiv">
       <img
         className="CourtPicSmall"
-        src="./images/Fussballplatz-Vagedesstrasse.png"
+        src={`${props.image}`} 
+        alt="bild"
       ></img>
 
       <div className="CourtCardDescription">
