@@ -1,9 +1,9 @@
-#backgroundHome {
+/* #backgroundHome {
   background-image: url(/images/placeholder_maps2.png);
   background-position: center;
   background-size: cover;
   position: relative;
-}
+} */
 
 #divIconList {
   width: 100%;
@@ -18,7 +18,10 @@
 .searchCity {
   margin-top: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #Homebuttons {
@@ -30,4 +33,10 @@
   position: absolute;
   left: auto;
   right: 25px;
+}
+
+#DivMap {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
 }

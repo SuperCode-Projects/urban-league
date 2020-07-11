@@ -24,7 +24,7 @@ class App extends Component {
           <div id="App">
             <Switch>
               <Route exact path="/">
-                <Home />
+                <Map />
               </Route>
               <Route exact path="/signin">
                 <SignIn />
@@ -41,8 +41,8 @@ class App extends Component {
               <Route exact path="/courtdetails">
                 <CourtDetails />
               </Route>
-              <Route exact path="/map">
-                <Map />
+              <Route exact path="/home">
+                <Home />
               </Route>
               <Route exact path="/time">
                 <Time />

@@ -25,7 +25,7 @@ class Home extends Component {
   render() {
     return (
       <div id="backgroundHome" className="background">
-        <Map />
+        <div id="DivMap"></div>
         {!this.context || !this.context.uid ? <Redirect to="signin" /> : ""}
         <div className="searchCity">
           <TextField
