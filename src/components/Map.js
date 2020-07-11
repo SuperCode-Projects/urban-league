@@ -68,6 +68,15 @@ const courtList = [
   },
 ];
 
+const mapOptions = {
+    zoomControl: false,
+    mapTypeControl: false,
+    scaleControl: false,
+    streetViewControl: false,
+    rotateControl: false,
+    fullscreenControl: false,
+  };
+
 class Map extends Component {
   constructor(props) {
     super(props);
@@ -144,8 +153,7 @@ setCurrentPosition = () => {
               mapContainerStyle={containerStyle}
               center={this.state.center}
               zoom={this.state.zoom}
-              disableDefaultUI={true}
-              scaleControl={false}
+              options={mapOptions}
             >
               <MarkerClusterer>
                 {(clusterer) =>
