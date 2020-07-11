@@ -73,6 +73,8 @@ class Map extends Component {
       center: { lat: 51.25, lng: 6.78 },
       location: "Düsseldorf",
       zoom: 12,
+      CurrentLatitude: 0,
+      CurrentLongitude: 0
     };
     this.locationChange = this.locationChange.bind(this);
     this.geocodingCity = this.geocodingCity.bind(this);
@@ -80,6 +82,8 @@ class Map extends Component {
 
   locationChange = (event) => {
     this.setState({ location: event.target.value });
+    this.getPosition = this.getPosition.bind(this);
+    this.setCurrentPosition = this.setCurrentPosition.bind(this);
   };
 
   geocodingCity = () => {
@@ -97,8 +101,20 @@ class Map extends Component {
     return;
   };
 
+  getPosition = () => {
+    Geolocation.getCurrentPosition(info => (this.setState(() => ({CurrentLatitude : info.coords.latitude, CurrentLongitude : info.coords.longitude}))));
+}
+
+setCurrentPosition = () => {
+        this.getPosition();
+        this.setState({ center: { lat: this.state.CurrentLatitude, lng: this.state.CurrentLongitude } });
+        console.log(this.state.CurrentLatitude, this.state.CurrentLongitude);
+  };
+
+
   componentDidMount() {
     this.geocodingCity();
+    this.setCurrentPosition();
   }
 
   render() {
@@ -190,6 +206,7 @@ class Map extends Component {
                     variant="contained"
                     type="submit"
                     id="myLocation"
+                    onClick={this.setCurrentPosition}
 
                     //   onClick={this.handleSignUpClicked}
                   >
