@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 import { firestore } from "../firebase";
 
 import {
-        GoogleMap,
-        LoadScript,
-        Marker,
-        MarkerClusterer,
-        DirectionsService,
-        DirectionsRenderer,
-        } from "@react-google-maps/api";
+  GoogleMap,
+  LoadScript,
+  Marker,
+  MarkerClusterer,
+  DirectionsService,
+  DirectionsRenderer,
+} from "@react-google-maps/api";
 import Geocode from "react-geocode";
 import Geolocation from "@react-native-community/geolocation";
 
@@ -27,11 +27,11 @@ import { UserContext } from "../providers/UserProvider";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-        faUser,
-        faPlus,
-        faLocationArrow,
-        faSearch,
-        } from "@fortawesome/free-solid-svg-icons";
+  faUser,
+  faPlus,
+  faLocationArrow,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 
 Geocode.setApiKey(`${GoogleAPIkey}`);
 
@@ -42,256 +42,312 @@ const containerStyle = {
 };
 
 const courtList = [
-                    {id:1, 
-                        courtName: "court 1",
-                        courtAddress: "Address 1",
-                        location: {lat:51.250695, lng:6.789360},
-                        courtDescription: "Description 1",
-                        courtImage: "https://source.unsplash.com/random/300x200?basketball",
-                        courtType: 0,
-                        courtSurface: 1,
-                        courtLevelOfLiking: 3,
-                        courtNumberOfPersonLiked: 0,
-                        courtCheckedIn: 0  
-                    },
-                    {id:2, 
-                        courtName: "court 2",
-                        courtAddress: "Address 2",
-                        location: {lat:51.246486, lng:6.793244},
-                        courtDescription: "Description 2",
-                        courtImage: "https://source.unsplash.com/random/300x200?football",
-                        courtType: 2,
-                        courtSurface: 0,
-                        courtLevelOfLiking: 1,
-                        courtNumberOfPersonLiked: 0,
-                        courtCheckedIn: 0  
-                    },
-                    {id:3, 
-                        courtName: "court 3",
-                        courtAddress: "Address 3",
-                        location: {lat:51.248089, lng:6.774877},
-                        courtDescription: "Description 3",
-                        courtImage: "https://source.unsplash.com/random/300x200?basketball",
-                        courtType: 0,
-                        courtSurface: 1,
-                        courtLevelOfLiking: 2,
-                        courtNumberOfPersonLiked: 0,
-                        courtCheckedIn: 0  
-                    },
-                ];
+  {
+    id: 1,
+    courtName: "Fortuna Street-Soccer",
+    courtAddress: "Cecilienallee 81-82, 40474 Düsseldorf",
+    location: { lat: 51.248352, lng: 6.761963 },
+    courtDescription:
+      "Gummibezogenes Feld mit Banden unter der Theodor-Heuss-Brücke mit Gittertoren und Basketballkörben.",
+    courtImage:
+      "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sea550cef4bf4a774/image/i1376cbbf29b3e4c5/version/1565806643/image.jpg",
+    courtType: 2,
+    courtSurface: 3,
+    courtLevelOfLiking: 3,
+    courtNumberOfPersonLiked: 0,
+    courtCheckedIn: 0,
+  },
+  {
+    id: 2,
+    courtName: "Straßenfußball @ Bilker Arcaden",
+    courtAddress: "Friedrichstraße 133, 40217 Düsseldorf",
+    location: { lat: 51.20795, lng: 6.771762 },
+    courtDescription:
+      "Gut versteckter, mit feinem Kies aufgeschüttete Fußballplatz hinter den Bilker Arcaden.",
+    courtImage:
+      "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sea550cef4bf4a774/image/ia253e03231ed0666/version/1565806685/image.jpg",
+    courtType: 2,
+    courtSurface: 5,
+    courtLevelOfLiking: 3,
+    courtNumberOfPersonLiked: 0,
+    courtCheckedIn: 0,
+  },
+  {
+    id: 3,
+    courtName: "court 3",
+    courtAddress: "Address 3",
+    location: { lat: 51.248089, lng: 6.774877 },
+    courtDescription: "Description 3",
+    courtImage: "https://source.unsplash.com/random/300x200?basketball",
+    courtType: 0,
+    courtSurface: 1,
+    courtLevelOfLiking: 2,
+    courtName: "Freizeitpark Ulenberg",
+    courtAddress: "Ulenbergstraße 11, 40223 Düsseldorf",
+    location: { lat: 51.194441, lng: 6.774524 },
+    courtDescription:
+      "Mehreren Fußballplätzen, einer Torwand sowie Volleyball- und Basketballfeldern. Mit Bänken zum Zuschauen.",
+    courtImage:
+      "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sea550cef4bf4a774/image/i2434a14be6a6bc6f/version/1565808376/image.jpg",
+    courtType: 2,
+    courtSurface: 3,
+    courtLevelOfLiking: 4,
+    courtNumberOfPersonLiked: 0,
+    courtCheckedIn: 0,
+  },
+  {
+    id: 4,
+    courtName: "Merkur Spielarena",
+    courtAddress: "Am Staad 11, 40474 Düsseldorf",
+    location: { lat: 51.263473, lng: 6.729509 },
+    courtDescription:
+      "Fußballplatz mit gepflegtem Kunstrasen und makellosen Tornetzen. Sehr voll nach Feierabend. ",
+    courtImage:
+      "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sea550cef4bf4a774/image/i8388ac9853d12026/version/1565807230/image.jpg",
+    courtType: 2,
+    courtSurface: 0,
+    courtLevelOfLiking: 4,
+    courtNumberOfPersonLiked: 0,
+    courtCheckedIn: 0,
+  },
+  {
+    id: 5,
+    courtName: "Fußball @ Kolpingplatz Düsseldorf",
+    courtAddress: "Kolpingplatz, 40477 Düsseldorf",
+    location: { lat: 51.240414, lng: 6.778698 },
+    courtDescription:
+      "Öffentlicher Fußballplatz, der viel Raum zum Kicken bietet. Oft leer.",
+    courtImage:
+      "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sea550cef4bf4a774/image/i752be21985706f7b/version/1565808199/image.jpg",
+    courtType: 2,
+    courtSurface: 5,
+    courtLevelOfLiking: 3,
+    courtNumberOfPersonLiked: 0,
+    courtCheckedIn: 0,
+  },
+];
 
 const mapOptions = {
-                    zoomControl: false,
-                    mapTypeControl: false,
-                    scaleControl: false,
-                    streetViewControl: false,
-                    rotateControl: false,
-                    fullscreenControl: false,
-                    };
+  zoomControl: false,
+  mapTypeControl: false,
+  scaleControl: false,
+  streetViewControl: false,
+  rotateControl: false,
+  fullscreenControl: false,
+};
 
 class Map extends Component {
-  
-    static contextType = UserContext;
-    constructor(props) {
-        super(props);
-        this.state = {
-                        center: { lat: 51.25, lng: 6.78 },
-                        location: "Düsseldorf",
-                        zoom: 12,
-                        CurrentLatitude: 0,
-                        CurrentLongitude: 0,
-                        clickedMarkerId: 1,
-                        Star : ["RatingBlue",
-                                "RatingBlue",
-                                "RatingBlue",
-                                "RatingBlue",
-                                "RatingBlue"],
-                    };
-        this.geocodingCity = this.geocodingCity.bind(this);
-        this.getPosition = this.getPosition.bind(this);
-        this.locationChange = this.locationChange.bind(this);
-        this.onClickedMarker = this.onClickedMarker.bind(this);
-        this.setCurrentPosition = this.setCurrentPosition.bind(this);
-    }
+  static contextType = UserContext;
+  constructor(props) {
+    super(props);
+    this.state = {
+      center: { lat: 51.25, lng: 6.78 },
+      location: "Düsseldorf",
+      zoom: 12,
+      CurrentLatitude: 0,
+      CurrentLongitude: 0,
+      clickedMarkerId: 1,
+      Star: [
+        "RatingBlue",
+        "RatingBlue",
+        "RatingBlue",
+        "RatingBlue",
+        "RatingBlue",
+      ],
+    };
+    this.geocodingCity = this.geocodingCity.bind(this);
+    this.getPosition = this.getPosition.bind(this);
+    this.locationChange = this.locationChange.bind(this);
+    this.onClickedMarker = this.onClickedMarker.bind(this);
+    this.setCurrentPosition = this.setCurrentPosition.bind(this);
+  }
 
-    geocodingCity = () => {
-        Geocode.fromAddress(`${this.state.location}`).then(
-            (response) => {
-                const { lat, lng } = response.results[0].geometry.location;
-                this.setState({ center: { lat: lat, lng: lng } });
-            },
-        (error) => {
+  geocodingCity = () => {
+    Geocode.fromAddress(`${this.state.location}`).then(
+      (response) => {
+        const { lat, lng } = response.results[0].geometry.location;
+        this.setState({ center: { lat: lat, lng: lng } });
+      },
+      (error) => {
         console.error(error);
-        });
-        return;
-    };
+      }
+    );
+    return;
+  };
 
-    getPosition = () => {
-        Geolocation.getCurrentPosition((info) =>
-            this.setState(() => ({
-                CurrentLatitude: info.coords.latitude,
-                CurrentLongitude: info.coords.longitude,
-            }))
-        );
-    };
+  getPosition = () => {
+    Geolocation.getCurrentPosition((info) =>
+      this.setState(() => ({
+        CurrentLatitude: info.coords.latitude,
+        CurrentLongitude: info.coords.longitude,
+      }))
+    );
+  };
 
-    locationChange = (event) => {
-        this.setState({ location: event.target.value });
-        this.getPosition = this.getPosition.bind(this);
-        this.setCurrentPosition = this.setCurrentPosition.bind(this);
-    };
+  locationChange = (event) => {
+    this.setState({ location: event.target.value });
+    this.getPosition = this.getPosition.bind(this);
+    this.setCurrentPosition = this.setCurrentPosition.bind(this);
+  };
 
-    onClickedMarker = (MarkerNumber, MarkerLocation) => {
-        this.setState(() => ({
-            clickedMarkerId: MarkerNumber,
-            clickedMarkerLocation: MarkerLocation,
-        }));
-        this.getPosition();
-        this.setState(prevState =>{
-            let newStar = prevState.Star
-                for (let i=0; i<courtList.length; i++) {
-                    for (let j=0; j<5; j++) {
-                        if (j<courtList[this.state.clickedMarkerId-1].courtLevelOfLiking + 1){
-                            newStar[j] = "RatingOrange";
-                        } else {
-                            newStar[j] = "RatingBlue";
-                        } 
-                    }
-                }
-                return { Star : newStar };
-            }
-        );
-    };
+  onClickedMarker = (MarkerNumber, MarkerLocation) => {
+    this.setState(() => ({
+      clickedMarkerId: MarkerNumber,
+      clickedMarkerLocation: MarkerLocation,
+    }));
+    this.getPosition();
+    this.setState((prevState) => {
+      let newStar = prevState.Star;
+      for (let i = 0; i < courtList.length; i++) {
+        for (let j = 0; j < 5; j++) {
+          if (
+            j <
+            courtList[this.state.clickedMarkerId - 1].courtLevelOfLiking + 1
+          ) {
+            newStar[j] = "RatingOrange";
+          } else {
+            newStar[j] = "RatingBlue";
+          }
+        }
+      }
+      return { Star: newStar };
+    });
+  };
 
-    setCurrentPosition = () => {
-        this.getPosition();
-        this.setState({
-            center: {
-                lat: this.state.CurrentLatitude,
-                lng: this.state.CurrentLongitude,
-            },
-        });
-    };
+  setCurrentPosition = () => {
+    this.getPosition();
+    this.setState({
+      center: {
+        lat: this.state.CurrentLatitude,
+        lng: this.state.CurrentLongitude,
+      },
+    });
+  };
 
-    componentDidMount() {
-        this.geocodingCity();
-        this.setCurrentPosition();
-    }
+  componentDidMount() {
+    this.geocodingCity();
+    this.setCurrentPosition();
+  }
 
-    render() {
-        return (
-            // {!this.context || !this.context.uid ? <Redirect to="signin" /> : ""}
+  render() {
+    return (
+      // {!this.context || !this.context.uid ? <Redirect to="signin" /> : ""}
 
-        <div className="background">
-            <LoadScript googleMapsApiKey={GoogleAPIkey}>
-            <div>
-                <GoogleMap
-                    mapContainerStyle={containerStyle}
-                    center={this.state.center}
-                    zoom={this.state.zoom}
-                    options={mapOptions}
-                >
-                <MarkerClusterer>
-                    {(clusterer) =>
-                        courtList.map((item) => (
-                            <Marker
-                                key={item.id}
-                                position={item.location}
-                                label={item.courtCheckedIn.toString()}
-                                icon={ (item.id == this.state.clickedMarkerId) ? 
-                                    (`https://img.icons8.com/emoji/48/000000/green-circle-emoji.png`):
-                                    (`https://img.icons8.com/emoji/48/000000/yellow-circle-emoji.png`)}
-                                clusterer={clusterer}
-                                onClick={() =>
-                                    this.onClickedMarker(item.id, item.location)
-                                }
-                            />
-                        ))
-                    }
-                </MarkerClusterer>
-
-                <div className="searchCity">
-                    <TextField
-                        id="filled-search"
-                        label="CITYNAME"
-                        variant="outlined"
-                        id="searchCity"
-                        value={this.state.location}
-                        onChange={this.locationChange}
+      <div className="background">
+        <LoadScript googleMapsApiKey={GoogleAPIkey}>
+          <div>
+            <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={this.state.center}
+              zoom={this.state.zoom}
+              options={mapOptions}
+            >
+              <MarkerClusterer>
+                {(clusterer) =>
+                  courtList.map((item) => (
+                    <Marker
+                      key={item.id}
+                      position={item.location}
+                      label={item.courtCheckedIn.toString()}
+                      icon={
+                        item.id == this.state.clickedMarkerId
+                          ? `https://img.icons8.com/emoji/48/000000/green-circle-emoji.png`
+                          : `https://img.icons8.com/emoji/48/000000/yellow-circle-emoji.png`
+                      }
+                      clusterer={clusterer}
+                      onClick={() =>
+                        this.onClickedMarker(item.id, item.location)
+                      }
                     />
+                  ))
+                }
+              </MarkerClusterer>
 
-                    <Button
-                        size="small"
-                        variant="contained"
-                        type="submit"
-                        id="searchButton"
-                        onClick={this.geocodingCity}
-                    >
-                        <FontAwesomeIcon icon={faSearch} />
-                    </Button>
-                </div>
-
-                <div id="Homebuttons">
-                    {" "}
-                    <Link to="/account">
-                        <Button
-                            size="small"
-                            variant="contained"
-                            type="submit"
-                            id="gotoAccount"
-                        >
-                            <FontAwesomeIcon icon={faUser} />
-                        </Button>
-                    </Link>
-                    <Link to="/addcourt">
-                        <Button
-                            size="small"
-                            variant="contained"
-                            type="submit"
-                            id="addCourtButton"
-                        >
-                            <FontAwesomeIcon icon={faPlus} />
-                        </Button>
-                    </Link>
-                    <Link to="#">
-                        <Button
-                            size="small"
-                            variant="contained"
-                            type="submit"
-                            id="myLocation"
-                            onClick={this.setCurrentPosition}
-
-                        //   onClick={this.handleSignUpClicked}
-                        >
-                            <FontAwesomeIcon
-                                icon={faLocationArrow}
-                                className="gotoProfil"
-                            />
-                        </Button>
-                    </Link>
-                </div>
-
-                <CourtCard
-                    courtName={courtList[this.state.clickedMarkerId - 1].courtName}
-                    courtAddress={courtList[this.state.clickedMarkerId - 1].courtAddress}
-                    image={courtList[this.state.clickedMarkerId - 1].courtImage}
-                    star1={this.state.Star[0]}
-                    star2={this.state.Star[1]}
-                    star3={this.state.Star[2]}
-                    star4={this.state.Star[3]}
-                    star5={this.state.Star[4]}
+              <div className="searchCity">
+                <TextField
+                  id="filled-search"
+                  label="CITYNAME"
+                  variant="outlined"
+                  id="searchCity"
+                  value={this.state.location}
+                  onChange={this.locationChange}
                 />
-              
-                {/* <Time /> */}
 
-                <div id="divIconList">
-                    <IconList/>
-                </div>
+                <Button
+                  size="small"
+                  variant="contained"
+                  type="submit"
+                  id="searchButton"
+                  onClick={this.geocodingCity}
+                >
+                  <FontAwesomeIcon icon={faSearch} />
+                </Button>
+              </div>
 
-                </GoogleMap>
-            </div>
-            </LoadScript>
-        </div>
-    );}}
+              <div id="Homebuttons">
+                {" "}
+                <Link to="/account">
+                  <Button
+                    size="small"
+                    variant="contained"
+                    type="submit"
+                    id="gotoAccount"
+                  >
+                    <FontAwesomeIcon icon={faUser} />
+                  </Button>
+                </Link>
+                <Link to="/addcourt">
+                  <Button
+                    size="small"
+                    variant="contained"
+                    type="submit"
+                    id="addCourtButton"
+                  >
+                    <FontAwesomeIcon icon={faPlus} />
+                  </Button>
+                </Link>
+                <Link to="#">
+                  <Button
+                    size="small"
+                    variant="contained"
+                    type="submit"
+                    id="myLocation"
+                    onClick={this.setCurrentPosition}
+
+                    //   onClick={this.handleSignUpClicked}
+                  >
+                    <FontAwesomeIcon
+                      icon={faLocationArrow}
+                      className="gotoProfil"
+                    />
+                  </Button>
+                </Link>
+              </div>
+
+              <CourtCard
+                courtName={courtList[this.state.clickedMarkerId - 1].courtName}
+                courtAddress={
+                  courtList[this.state.clickedMarkerId - 1].courtAddress
+                }
+                image={courtList[this.state.clickedMarkerId - 1].courtImage}
+                star1={this.state.Star[0]}
+                star2={this.state.Star[1]}
+                star3={this.state.Star[2]}
+                star4={this.state.Star[3]}
+                star5={this.state.Star[4]}
+              />
+
+              {/* <Time /> */}
+
+              <div id="divIconList">
+                <IconList />
+              </div>
+            </GoogleMap>
+          </div>
+        </LoadScript>
+      </div>
+    );
+  }
+}
 
 export default Map;
