@@ -125,6 +125,51 @@ const courtList = [
     courtNumberOfPersonLiked: 0,
     courtCheckedIn: 0,
   },
+  {
+    id: 6,
+    courtName: "Einsamer Basketballplatz hinter Bilk Arcarden",
+    courtAddress: "Friedrichstraße 145, 40217 Düsseldorf",
+    location: { lat: 51.207883, lng: 6.771127 },
+    courtDescription:
+      "Hinter den Bilker Arcaden sind zwei eingezäunte Streetball Courts. Körbe nebeneinander Bodenbelag top, sehr einsam. ",
+    courtImage:
+      "https://lh3.googleusercontent.com/p/AF1QipNYLw3W8GyngGQHof20NxsBMyiffeUGqAMPUhPH=s0",
+    courtType: 0,
+    courtSurface: 1,
+    courtLevelOfLiking: 3,
+    courtNumberOfPersonLiked: 0,
+    courtCheckedIn: 0,
+  },
+  {
+    id: 7,
+    courtName: "Basketball in Derendorf",
+    courtAddress: "Spichernpl., 40476 Düsseldorf",
+    location: { lat: 51.247552, lng: 6.78402 },
+    courtDescription:
+      "Basketballplatz am Spichernplatz ideal für ein Fünf gegen Fünf. Bodenbelag insgesamt gut bespielbar. ",
+    courtImage:
+      "https://image.jimcdn.com/app/cms/image/transf/none/path/sea550cef4bf4a774/image/i61eae3cf0c4175ac/version/1553019117/image.jpg",
+    courtType: 0,
+    courtSurface: 1,
+    courtLevelOfLiking: 4,
+    courtNumberOfPersonLiked: 0,
+    courtCheckedIn: 0,
+  },
+  {
+    id: 8,
+    courtName: "Beachvolleyball Nähe Ulenbergpark",
+    courtAddress: "Ulenbergstraße 11, 40223 Düsseldorf",
+    location: { lat: 51.195485, lng: 6.77488 },
+    courtDescription:
+      "Beachvolleyball zwischen Skatepark und Freizeitpark Ulenberg. Sandqualität gut! ",
+    courtImage:
+      "https://lh3.googleusercontent.com/p/AF1QipNFRfHgej4lfj4gR0LabpynneGsOjh-vHDfZ9fF=s0",
+    courtType: 4,
+    courtSurface: 4,
+    courtLevelOfLiking: 4,
+    courtNumberOfPersonLiked: 0,
+    courtCheckedIn: 0,
+  },
 ];
 
 const mapOptions = {
