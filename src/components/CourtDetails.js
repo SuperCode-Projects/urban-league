@@ -13,9 +13,15 @@ import {
 import IconList from "./IconList";
 import { Link } from "react-router-dom";
 
+const courtSurface = ["Artificial Grass", "Concrete", "Natural Grass", "Rubber", "Sand", "Other"]
+const courtType = ["Basketball", "Dart", "Football", "Tennis", "Volleyball"]
 
 
-
+// {global.config.court.detail.type}
+  
+  
+//  {global.config.court.detail.likeLevel
+//  {global.config.court.detail.likedPerson
 
 
 const CourtDetails = () => {
@@ -33,7 +39,7 @@ const CourtDetails = () => {
           type="submit"
           id="buttonPlayer"
         >
-          Player 0
+          {global.config.court.detail.checkedIn}
         </Button>
         <h1 id="courtName">{global.config.court.detail.name}</h1>
 
@@ -49,7 +55,7 @@ const CourtDetails = () => {
         {global.config.court.detail.description}
         </p>
         <div id="buttonList">
-          <button className="buttonGreen">{global.config.court.detail.surface}</button>
+          <button className="buttonGreen">{courtSurface[`${global.config.court.detail.surface}`]}</button>
           <button className="buttonGreen">40x70m</button>
           <button className="buttonGreen">Outdoor</button>
         </div>
