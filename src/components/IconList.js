@@ -13,8 +13,7 @@ constructor(props) {
 
 selectCourtType = (courtType) => {
   console.log(courtType);
-  this.setState({selectedCourtType: courtType});
-  console.log(this.state.selectedCourtType);
+  this.setState({selectedCourtType: courtType}, () => {console.log(this.state.selectedCourtType)}); 
 }
 
 componentDidMount(){
