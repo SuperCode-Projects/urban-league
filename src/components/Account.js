@@ -47,9 +47,7 @@ class Account extends Component {
             color="primary"
             inputProps={{ "aria-label": "secondary checkbox" }}
           />
-          <p>
-            I would like to receive your newsletter and other promotional stuff
-          </p>
+          <p>I would like to receive your newsletter and promos</p>
         </div>
         <div id="text">
           <Button

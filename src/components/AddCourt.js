@@ -44,7 +44,7 @@ const AddCourt = () => {
         <TextField id="filled-basic" label="Adress" variant="outlined" />
         <TextField id="filled-basic" label="Description" variant="outlined" />
       </div>
-      <h4 id="lessMargin">POSSIBLE SPORTS</h4>
+      <h4>POSSIBLE SPORTS</h4>
       <IconList />
       <div id="newsletter-check"></div>
       <h4>DETAILS</h4>
