@@ -18,3 +18,7 @@
   margin-right: auto;
   margin-left: auto;
 }
+
+#iconlist button {
+  border: none;
+}
