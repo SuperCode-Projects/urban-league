@@ -88,6 +88,36 @@ const courtList = [
     courtNumberOfPersonLiked: 0,
     courtCheckedIn: 0,
   },
+  {
+    id: 4,
+    courtName: "Merkur Spielarena",
+    courtAddress: "Am Staad 11, 40474 Düsseldorf",
+    location: { lat: 51.263473, lng: 6.729509 },
+    courtDescription:
+      "Fußballplatz mit gepflegtem Kunstrasen und makellosen Tornetzen. Sehr voll nach Feierabend. ",
+    courtImage:
+      "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sea550cef4bf4a774/image/i8388ac9853d12026/version/1565807230/image.jpg",
+    courtType: 2,
+    courtSurface: 0,
+    courtLevelOfLiking: 4,
+    courtNumberOfPersonLiked: 0,
+    courtCheckedIn: 0,
+  },
+  {
+    id: 5,
+    courtName: "Fußball @ Kolpingplatz Düsseldorf",
+    courtAddress: "Kolpingplatz, 40477 Düsseldorf",
+    location: { lat: 51.240414, lng: 6.778698 },
+    courtDescription:
+      "Öffentlicher Fußballplatz, der viel Raum zum Kicken bietet. Oft leer.",
+    courtImage:
+      "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sea550cef4bf4a774/image/i752be21985706f7b/version/1565808199/image.jpg",
+    courtType: 2,
+    courtSurface: 5,
+    courtLevelOfLiking: 3,
+    courtNumberOfPersonLiked: 0,
+    courtCheckedIn: 0,
+  },
 ];
 
 const mapOptions = {
