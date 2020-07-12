@@ -1,5 +1,5 @@
 import React, { Component, createContext } from 'react';
-import { auth } from "../firebase";
+import { auth, firestore } from "../firebase";
 
 export const UserContext = createContext({ user: null });
 
@@ -11,8 +11,16 @@ class UserProvider extends Component {
 
     componentDidMount() {
         auth.onAuthStateChanged(user => {
-            this.setState({ user })
-            console.log("Signed in from User Provider", user)
+            if (!user) {
+                this.setState({ user: null });
+            } else {
+                firestore.collection("users").doc(user.uid).onSnapshot(doc => {
+                    if (doc.exists) {
+                        this.setState({ user: doc.data() })
+                    }
+                })
+                console.log("Signed in from User Provider", user)
+            }
         });
     }
 

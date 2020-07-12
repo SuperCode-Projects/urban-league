@@ -38,6 +38,7 @@ Geocode.setApiKey(`${GoogleAPIkey}`);
 const containerStyle = {
   width: "100%",
   height: "100vh",
+  maxHeight: "736px",
   borderRadius: "20px",
 };
 
@@ -127,7 +128,7 @@ const courtList = [
   },
   {
     id: 6,
-    courtName: "Einsamer Basketballplatz hinter Bilk Arcarden",
+    courtName: "Basketballplatz hinter Bilk Arcarden",
     courtAddress: "Friedrichstraße 145, 40217 Düsseldorf",
     location: { lat: 51.207883, lng: 6.771127 },
     courtDescription:
@@ -294,6 +295,7 @@ class Map extends Component {
 
       <div className="background">
         <LoadScript googleMapsApiKey={GoogleAPIkey}>
+<<<<<<< HEAD
           <div>
             <GoogleMap
               mapContainerStyle={containerStyle}
@@ -321,88 +323,113 @@ class Map extends Component {
                   ))
                 }
               </MarkerClusterer>
+=======
+          <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={this.state.center}
+            zoom={this.state.zoom}
+            options={mapOptions}
+          >
+            <MarkerClusterer>
+              {(clusterer) =>
+                courtList.map((item) => (
+                  <Marker
+                    key={item.id}
+                    position={item.location}
+                    label={item.courtCheckedIn.toString()}
+                    icon={
+                      item.id == this.state.clickedMarkerId
+                        ? `https://img.icons8.com/emoji/48/000000/green-circle-emoji.png`
+                        : `https://img.icons8.com/emoji/48/000000/yellow-circle-emoji.png`
+                    }
+                    clusterer={clusterer}
+                    onClick={() => this.onClickedMarker(item.id, item.location)}
+                  />
+                ))
+              }
+            </MarkerClusterer>
+>>>>>>> 053f887f29535091200c823e0a1c03cc5bfcc302
 
-              <div className="searchCity">
-                <TextField
-                  id="filled-search"
-                  label="CITYNAME"
-                  variant="outlined"
-                  id="searchCity"
-                  value={this.state.location}
-                  onChange={this.locationChange}
-                />
+            <div className="searchCity">
+              <TextField
+                id="filled-search"
+                label="CITYNAME"
+                variant="outlined"
+                id="searchCity"
+                value={this.state.location}
+                onChange={this.locationChange}
+              />
 
+              <Button
+                size="small"
+                variant="contained"
+                type="submit"
+                id="searchButton"
+                onClick={this.geocodingCity}
+              >
+                <FontAwesomeIcon icon={faSearch} />
+              </Button>
+            </div>
+
+            <div id="Homebuttons">
+              {" "}
+              <Link to="/account">
                 <Button
                   size="small"
                   variant="contained"
                   type="submit"
-                  id="searchButton"
-                  onClick={this.geocodingCity}
+                  id="gotoAccount"
                 >
-                  <FontAwesomeIcon icon={faSearch} />
+                  <FontAwesomeIcon icon={faUser} />
                 </Button>
-              </div>
+              </Link>
+              <Link to="/addcourt">
+                <Button
+                  size="small"
+                  variant="contained"
+                  type="submit"
+                  id="addCourtButton"
+                >
+                  <FontAwesomeIcon icon={faPlus} />
+                </Button>
+              </Link>
+              <Link to="#">
+                <Button
+                  size="small"
+                  variant="contained"
+                  type="submit"
+                  id="myLocation"
+                  onClick={this.setCurrentPosition}
 
-              <div id="Homebuttons">
-                {" "}
-                <Link to="/account">
-                  <Button
-                    size="small"
-                    variant="contained"
-                    type="submit"
-                    id="gotoAccount"
-                  >
-                    <FontAwesomeIcon icon={faUser} />
-                  </Button>
-                </Link>
-                <Link to="/addcourt">
-                  <Button
-                    size="small"
-                    variant="contained"
-                    type="submit"
-                    id="addCourtButton"
-                  >
-                    <FontAwesomeIcon icon={faPlus} />
-                  </Button>
-                </Link>
-                <Link to="#">
-                  <Button
-                    size="small"
-                    variant="contained"
-                    type="submit"
-                    id="myLocation"
-                    onClick={this.setCurrentPosition}
+                  //   onClick={this.handleSignUpClicked}
+                >
+                  <FontAwesomeIcon
+                    icon={faLocationArrow}
+                    className="gotoProfil"
+                  />
+                </Button>
+              </Link>
+            </div>
 
-                    //   onClick={this.handleSignUpClicked}
-                  >
-                    <FontAwesomeIcon
-                      icon={faLocationArrow}
-                      className="gotoProfil"
-                    />
-                  </Button>
-                </Link>
-              </div>
+            <CourtCard
+              courtName={courtList[this.state.clickedMarkerId - 1].courtName}
+              courtAddress={
+                courtList[this.state.clickedMarkerId - 1].courtAddress
+              }
+              image={courtList[this.state.clickedMarkerId - 1].courtImage}
+              star1={this.state.Star[0]}
+              star2={this.state.Star[1]}
+              star3={this.state.Star[2]}
+              star4={this.state.Star[3]}
+              star5={this.state.Star[4]}
+            />
 
-              <CourtCard
-                courtName={courtList[this.state.clickedMarkerId - 1].courtName}
-                courtAddress={
-                  courtList[this.state.clickedMarkerId - 1].courtAddress
-                }
-                image={courtList[this.state.clickedMarkerId - 1].courtImage}
-                star1={this.state.Star[0]}
-                star2={this.state.Star[1]}
-                star3={this.state.Star[2]}
-                star4={this.state.Star[3]}
-                star5={this.state.Star[4]}
-              />
+            {/* <Time /> */}
 
-              {/* <Time /> */}
-
-              <div id="divIconList">
-                <IconList />
-              </div>
-            </GoogleMap>
-          </div>
+            <div id="divIconList">
+              <IconList />
+            </div>
+          </GoogleMap>
         </LoadScript>
       </div>
     );

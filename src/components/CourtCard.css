@@ -1,5 +1,5 @@
 .CourtCardDiv {
-  height: 24%;
+  height: 25%;
   width: 80%;
   border-radius: 20px;
   background-color: white;
@@ -32,8 +32,8 @@ p {
 }
 
 .CourtCardDescription h3 {
-  margin-top: 8px;
-  margin-bottom: 6px;
+  margin-top: 7px;
+  margin-bottom: 5px;
 }
 
 .CourtCardDescription p {

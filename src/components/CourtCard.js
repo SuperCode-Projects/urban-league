@@ -9,17 +9,10 @@ import {
 import IconList from "./IconList";
 import { Link } from "react-router-dom";
 
-const CourtCard = props => {
-
-
-
+const CourtCard = (props) => {
   return (
     <div className="CourtCardDiv">
-      <img
-        className="CourtPicSmall"
-        src={`${props.image}`} 
-        alt="bild"
-      ></img>
+      <img className="CourtPicSmall" src={`${props.image}`} alt="bild"></img>
 
       <div className="CourtCardDescription">
         <h3>{props.courtName}</h3>
