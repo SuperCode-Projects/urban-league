@@ -34,8 +34,6 @@ import { GoogleAPIkey } from "../key";
 import Geocode from "react-geocode";
 import Geolocation from "@react-native-community/geolocation";
 
-
-
 Geocode.setApiKey(`${GoogleAPIkey}`);
 
 const containerStyle = {
@@ -45,52 +43,57 @@ const containerStyle = {
 };
 
 const courtList = [
-    {id:1, 
-        courtName: "court 1",
-        courtAddress: "Address 1",
-        location: {lat:51.250695, lng:6.789360},
-        courtDescription: "Description 1",
-        courtImage: "https://source.unsplash.com/random/300x200?basketball",
-        courtType: 0,
-        courtSurface: 1,
-        courtLevelOfLiking: 3,
-        courtNumberOfPersonLiked: 0,
-        courtCheckedIn: 0  
-    },
-    {id:2, 
-        courtName: "court 2",
-        courtAddress: "Address 2",
-        location: {lat:51.246486, lng:6.793244},
-        courtDescription: "Description 2",
-        courtImage: "https://source.unsplash.com/random/300x200?football",
-        courtType: 2,
-        courtSurface: 0,
-        courtLevelOfLiking: 1,
-        courtNumberOfPersonLiked: 0,
-        courtCheckedIn: 0  
-    },
-    {id:3, 
-        courtName: "court 3",
-        courtAddress: "Address 3",
-        location: {lat:51.248089, lng:6.774877},
-        courtDescription: "Description 3",
-        courtImage: "https://source.unsplash.com/random/300x200?basketball",
-        courtType: 0,
-        courtSurface: 1,
-        courtLevelOfLiking: 2,
-        courtNumberOfPersonLiked: 0,
-        courtCheckedIn: 0  
-    },
+  {
+    id: 1,
+    courtName: "Fortuna Street-Soccer",
+    courtAddress: "Cecilienallee 81-82, 40474 Düsseldorf",
+    location: { lat: 51.248352, lng: 6.761963 },
+    courtDescription:
+      "Gummibezogenes Feld mit Banden unter der Theodor-Heuss-Brücke mit Gittertoren und Basketballkörben.",
+    courtImage:
+      "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/sea550cef4bf4a774/image/i1376cbbf29b3e4c5/version/1565806643/image.jpg",
+    courtType: 2,
+    courtSurface: 3,
+    courtLevelOfLiking: 3,
+    courtNumberOfPersonLiked: 0,
+    courtCheckedIn: 0,
+  },
+  {
+    id: 2,
+    courtName: "court 2",
+    courtAddress: "Address 2",
+    location: { lat: 51.246486, lng: 6.793244 },
+    courtDescription: "Description 2",
+    courtImage: "https://source.unsplash.com/random/300x200?football",
+    courtType: 2,
+    courtSurface: 0,
+    courtLevelOfLiking: 1,
+    courtNumberOfPersonLiked: 0,
+    courtCheckedIn: 0,
+  },
+  {
+    id: 3,
+    courtName: "court 3",
+    courtAddress: "Address 3",
+    location: { lat: 51.248089, lng: 6.774877 },
+    courtDescription: "Description 3",
+    courtImage: "https://source.unsplash.com/random/300x200?basketball",
+    courtType: 0,
+    courtSurface: 1,
+    courtLevelOfLiking: 2,
+    courtNumberOfPersonLiked: 0,
+    courtCheckedIn: 0,
+  },
 ];
 
 const mapOptions = {
-    zoomControl: false,
-    mapTypeControl: false,
-    scaleControl: false,
-    streetViewControl: false,
-    rotateControl: false,
-    fullscreenControl: false,
-  };
+  zoomControl: false,
+  mapTypeControl: false,
+  scaleControl: false,
+  streetViewControl: false,
+  rotateControl: false,
+  fullscreenControl: false,
+};
 
 class Map extends Component {
   static contextType = UserContext;
@@ -103,11 +106,13 @@ class Map extends Component {
       CurrentLatitude: 0,
       CurrentLongitude: 0,
       clickedMarkerId: 1,
-      Star : ["RatingBlue",
-            "RatingBlue",
-            "RatingBlue",
-            "RatingBlue",
-            "RatingBlue"]
+      Star: [
+        "RatingBlue",
+        "RatingBlue",
+        "RatingBlue",
+        "RatingBlue",
+        "RatingBlue",
+      ],
     };
     this.locationChange = this.locationChange.bind(this);
     this.geocodingCity = this.geocodingCity.bind(this);
@@ -165,23 +170,25 @@ class Map extends Component {
     console.log(this.state.CurrentLatitude, this.state.CurrentLongitude);
     Geolocation.getCurrentPosition((info) => console.log(info));
 
-    this.setState(prevState =>{
-        let newStar = prevState.Star
-            for (let i=0; i<courtList.length; i++) {
-                for (let j=0; j<5; j++) {
-                    console.log(this.state.clickedMarkerId)
-                    if (j<courtList[this.state.clickedMarkerId-1].courtLevelOfLiking + 1){
-                        newStar[j] = "RatingOrange";
-                    } else {
-                        newStar[j] = "RatingBlue";
-                    } 
-                }
-            }
-            console.log(newStar);
-            console.log(this.state.Star);
-            return { Star : newStar };
+    this.setState((prevState) => {
+      let newStar = prevState.Star;
+      for (let i = 0; i < courtList.length; i++) {
+        for (let j = 0; j < 5; j++) {
+          console.log(this.state.clickedMarkerId);
+          if (
+            j <
+            courtList[this.state.clickedMarkerId - 1].courtLevelOfLiking + 1
+          ) {
+            newStar[j] = "RatingOrange";
+          } else {
+            newStar[j] = "RatingBlue";
+          }
         }
-    );
+      }
+      console.log(newStar);
+      console.log(this.state.Star);
+      return { Star: newStar };
+    });
   };
 
   componentDidMount() {
@@ -209,8 +216,10 @@ class Map extends Component {
                       key={item.id}
                       position={item.location}
                       label={item.courtCheckedIn.toString()}
-                      icon={ (item.id == this.state.clickedMarkerId) ? (`https://img.icons8.com/emoji/48/000000/green-circle-emoji.png`):(`https://img.icons8.com/emoji/48/000000/yellow-circle-emoji.png`)
-                        
+                      icon={
+                        item.id == this.state.clickedMarkerId
+                          ? `https://img.icons8.com/emoji/48/000000/green-circle-emoji.png`
+                          : `https://img.icons8.com/emoji/48/000000/yellow-circle-emoji.png`
                       }
                       clusterer={clusterer}
                       onClick={() =>
@@ -291,7 +300,9 @@ class Map extends Component {
               </div>
               <CourtCard
                 courtName={courtList[this.state.clickedMarkerId - 1].courtName}
-                courtAddress={courtList[this.state.clickedMarkerId - 1].courtAddress}
+                courtAddress={
+                  courtList[this.state.clickedMarkerId - 1].courtAddress
+                }
                 image={courtList[this.state.clickedMarkerId - 1].courtImage}
                 star1={this.state.Star[0]}
                 star2={this.state.Star[1]}
