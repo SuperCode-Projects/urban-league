@@ -112,7 +112,7 @@ const courtList = [
   },
   {
     id: 5,
-    courtName: "Fußball @ Kolpingplatz Düsseldorf",
+    courtName: "Kolpingplatz Düsseldorf",
     courtAddress: "Kolpingplatz, 40477 Düsseldorf",
     location: { lat: 51.240414, lng: 6.778698 },
     courtDescription:
