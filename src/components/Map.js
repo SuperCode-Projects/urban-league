@@ -172,6 +172,8 @@ const courtList = [
   },
 ];
 
+const filteredMarker = [];
+
 const mapOptions = {
   zoomControl: false,
   mapTypeControl: false,
@@ -199,12 +201,23 @@ class Map extends Component {
         "RatingBlue",
         "RatingBlue",
       ],
+      selectedCourtType: 2,
+      isFetching: false
     };
+    this.filterMarker = this.filterMarker.bind(this);
     this.geocodingCity = this.geocodingCity.bind(this);
     this.getPosition = this.getPosition.bind(this);
     this.locationChange = this.locationChange.bind(this);
     this.onClickedMarker = this.onClickedMarker.bind(this);
     this.setCurrentPosition = this.setCurrentPosition.bind(this);
+  }
+
+  filterMarker = () => {
+    courtList.forEach(element => {
+      if (element.courtType == (this.state.selectedCourtType)) {
+        filteredMarker.push(element);
+      }
+  });
   }
 
   geocodingCity = () => {
@@ -272,6 +285,7 @@ class Map extends Component {
   componentDidMount() {
     this.geocodingCity();
     this.setCurrentPosition();
+    this.filterMarker();
   }
 
   render() {
@@ -289,7 +303,7 @@ class Map extends Component {
             >
               <MarkerClusterer>
                 {(clusterer) =>
-                  courtList.map((item) => (
+                  filteredMarker.map((item) => (
                     <Marker
                       key={item.id}
                       position={item.location}

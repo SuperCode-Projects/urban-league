@@ -13,7 +13,7 @@ constructor(props) {
 
 selectCourtType = (courtType) => {
   console.log(courtType);
-  this.setState({selectedCourtType: courtType}, () => {console.log(this.state.selectedCourtType)}); 
+  this.setState({selectedCourtType: courtType}, () => {console.log(this.state.selectedCourtType)});
 }
 
 componentDidMount(){
@@ -27,7 +27,7 @@ componentDidMount(){
         <button onClick={() => this.selectCourtType(1)}><img src="./images/icons/icon_soccer.png" alt="icon soccer"/></button>
         <button onClick={() => this.selectCourtType(2)}><img src="./images/icons/icon_volleyball.png" alt="icon volleyball"/></button>
         <button onClick={() => this.selectCourtType(3)}><img src="./images/icons/icon_ping-pong.png" alt="icon ping-pong"/></button>
-        <button onClick={() => this.selectCourtType(4)}><img src="./images/icons/icon_dart.png" alt="icon dart"/></button>
+        <button onClick={() => this.selectCourtType(4)}><img src="./images/icons/icon_dart.png" alt="icon dart"/></button>      
       </div>
     );
   }
