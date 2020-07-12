@@ -13,12 +13,17 @@ import {
 import IconList from "./IconList";
 import { Link } from "react-router-dom";
 
+
+
+
+
+
 const CourtDetails = () => {
   return (
     <div className="background">
       <img
         className="CourtPic"
-        src="./images/Fussballplatz-Vagedesstrasse.png"
+        src={global.config.court.detail.image}
       ></img>
 
       <div className="CourtCardBig">
@@ -30,22 +35,21 @@ const CourtDetails = () => {
         >
           Player 0
         </Button>
-        <h1 id="courtName">Fußballplatz Vagedesstraße</h1>
+        <h1 id="courtName">{global.config.court.detail.name}</h1>
 
         {/* TODO: Replace H1 with Typography Material UI */}
 
         <div className="Rating">
           <FontAwesomeIcon icon={faStar} className="RatingOrange" />
           <p className="RatingNum">4.5</p>
-          <p className="CourtAdress">Vagedesstraße 21, 40479 Düsseldorf</p>
+          <p className="CourtAdress">{global.config.court.detail.address}</p>
         </div>
 
         <p className="CourtDescription">
-          Netter kleiner Fußballplatz mit hohem Zaun und zwei Metall-Toren.
-          Wiese drum herum und Parkmöglichkeiten.
+        {global.config.court.detail.description}
         </p>
         <div id="buttonList">
-          <button className="buttonGreen">Gravel field</button>
+          <button className="buttonGreen">{global.config.court.detail.surface}</button>
           <button className="buttonGreen">40x70m</button>
           <button className="buttonGreen">Outdoor</button>
         </div>

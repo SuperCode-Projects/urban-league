@@ -75,14 +75,6 @@ const courtList = [
   },
   {
     id: 3,
-    courtName: "court 3",
-    courtAddress: "Address 3",
-    location: { lat: 51.248089, lng: 6.774877 },
-    courtDescription: "Description 3",
-    courtImage: "https://source.unsplash.com/random/300x200?basketball",
-    courtType: 0,
-    courtSurface: 1,
-    courtLevelOfLiking: 2,
     courtName: "Freizeitpark Ulenberg",
     courtAddress: "Ulenbergstraße 11, 40223 Düsseldorf",
     location: { lat: 51.194441, lng: 6.774524 },
@@ -201,9 +193,7 @@ class Map extends Component {
         "RatingBlue",
         "RatingBlue",
         "RatingBlue",
-      ],
-      selectedCourtType: 2,
-      isFetching: false
+      ]
     };
     this.filterMarker = this.filterMarker.bind(this);
     this.geocodingCity = this.geocodingCity.bind(this);
@@ -211,14 +201,21 @@ class Map extends Component {
     this.locationChange = this.locationChange.bind(this);
     this.onClickedMarker = this.onClickedMarker.bind(this);
     this.setCurrentPosition = this.setCurrentPosition.bind(this);
+    this.mapLoaded = this.mapLoaded.bind(this);
   }
+
+  mapLoaded = () => {
+    this.filterMarker();
+  }
+  
 
   filterMarker = () => {
     courtList.forEach(element => {
-      if (element.courtType == (this.state.selectedCourtType)) {
+      if (element.courtType == (global.config.court.selected.type)) {
         filteredMarker.push(element);
       }
   });
+
   }
 
   geocodingCity = () => {
@@ -271,6 +268,15 @@ class Map extends Component {
       }
       return { Star: newStar };
     });
+    global.config.court.detail.name = courtList[this.state.clickedMarkerId - 1].courtName;
+    global.config.court.detail.address = courtList[this.state.clickedMarkerId - 1].courtAddress;
+    global.config.court.detail.description = courtList[this.state.clickedMarkerId - 1].courtDescription;
+    global.config.court.detail.image = courtList[this.state.clickedMarkerId - 1].courtImage;
+    global.config.court.detail.type = courtList[this.state.clickedMarkerId - 1].courtType;
+    global.config.court.detail.surface = courtList[this.state.clickedMarkerId - 1].courtSurface;
+    global.config.court.detail.likeLevel = courtList[this.state.clickedMarkerId - 1].courtLevelOfLiking;
+    global.config.court.detail.likedPerson = courtList[this.state.clickedMarkerId - 1].courtNumberOfPersonLiked;
+    global.config.court.detail.checkedIn = courtList[this.state.clickedMarkerId - 1].courtCheckedIn;
   };
 
   setCurrentPosition = () => {
@@ -295,13 +301,13 @@ class Map extends Component {
 
       <div className="background">
         <LoadScript googleMapsApiKey={GoogleAPIkey}>
-<<<<<<< HEAD
           <div>
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={this.state.center}
               zoom={this.state.zoom}
               options={mapOptions}
+              onLoad={this.mapLoaded}
             >
               <MarkerClusterer>
                 {(clusterer) =>
@@ -316,39 +322,11 @@ class Map extends Component {
                           : `https://img.icons8.com/emoji/48/000000/yellow-circle-emoji.png`
                       }
                       clusterer={clusterer}
-                      onClick={() =>
-                        this.onClickedMarker(item.id, item.location)
-                      }
+                      onClick={() =>this.onClickedMarker(item.id, item.location)}
                     />
                   ))
                 }
               </MarkerClusterer>
-=======
-          <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={this.state.center}
-            zoom={this.state.zoom}
-            options={mapOptions}
-          >
-            <MarkerClusterer>
-              {(clusterer) =>
-                courtList.map((item) => (
-                  <Marker
-                    key={item.id}
-                    position={item.location}
-                    label={item.courtCheckedIn.toString()}
-                    icon={
-                      item.id == this.state.clickedMarkerId
-                        ? `https://img.icons8.com/emoji/48/000000/green-circle-emoji.png`
-                        : `https://img.icons8.com/emoji/48/000000/yellow-circle-emoji.png`
-                    }
-                    clusterer={clusterer}
-                    onClick={() => this.onClickedMarker(item.id, item.location)}
-                  />
-                ))
-              }
-            </MarkerClusterer>
->>>>>>> 053f887f29535091200c823e0a1c03cc5bfcc302
 
             <div className="searchCity">
               <TextField
@@ -413,9 +391,7 @@ class Map extends Component {
 
             <CourtCard
               courtName={courtList[this.state.clickedMarkerId - 1].courtName}
-              courtAddress={
-                courtList[this.state.clickedMarkerId - 1].courtAddress
-              }
+              courtAddress={courtList[this.state.clickedMarkerId - 1].courtAddress}
               image={courtList[this.state.clickedMarkerId - 1].courtImage}
               star1={this.state.Star[0]}
               star2={this.state.Star[1]}
@@ -430,6 +406,7 @@ class Map extends Component {
               <IconList />
             </div>
           </GoogleMap>
+          </div>
         </LoadScript>
       </div>
     );

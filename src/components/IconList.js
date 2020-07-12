@@ -12,8 +12,8 @@ constructor(props) {
 }
 
 selectCourtType = (courtType) => {
-  console.log(courtType);
-  this.setState({selectedCourtType: courtType}, () => {console.log(this.state.selectedCourtType)});
+  global.config.court.selected.type = courtType;
+  this.setState({selectedCourtType: courtType}, () => {console.log(this.state.selectedCourtType, global.config.court.selected.type)});
 }
 
 componentDidMount(){
