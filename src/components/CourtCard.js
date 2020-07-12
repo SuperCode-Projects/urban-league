@@ -25,11 +25,11 @@ const CourtCard = props => {
         <h3>{props.courtName}</h3>
         <p>{props.courtAddress}</p>
         <div id="RateIt">
-          <FontAwesomeIcon icon={faStar} className="RatingOrange" />
-          <FontAwesomeIcon icon={faStar} className="RatingOrange" />
-          <FontAwesomeIcon icon={faStar} className="RatingOrange" />
-          <FontAwesomeIcon icon={faStar} className="RatingBlue" />
-          <FontAwesomeIcon icon={faStar} className="RatingBlue" />
+          <FontAwesomeIcon icon={faStar} className={`${props.star1}`} />
+          <FontAwesomeIcon icon={faStar} className={`${props.star2}`} />
+          <FontAwesomeIcon icon={faStar} className={`${props.star3}`} />
+          <FontAwesomeIcon icon={faStar} className={`${props.star4}`} />
+          <FontAwesomeIcon icon={faStar} className={`${props.star5}`} />
         </div>
         <Link to="/courtdetails">
           <Button

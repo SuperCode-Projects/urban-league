@@ -53,7 +53,7 @@ const courtList = [
         courtImage: "https://source.unsplash.com/random/300x200?basketball",
         courtType: 0,
         courtSurface: 1,
-        courtLevelOfLiking: 0,
+        courtLevelOfLiking: 3,
         courtNumberOfPersonLiked: 0,
         courtCheckedIn: 0  
     },
@@ -65,7 +65,7 @@ const courtList = [
         courtImage: "https://source.unsplash.com/random/300x200?football",
         courtType: 2,
         courtSurface: 0,
-        courtLevelOfLiking: 0,
+        courtLevelOfLiking: 1,
         courtNumberOfPersonLiked: 0,
         courtCheckedIn: 0  
     },
@@ -77,7 +77,7 @@ const courtList = [
         courtImage: "https://source.unsplash.com/random/300x200?basketball",
         courtType: 0,
         courtSurface: 1,
-        courtLevelOfLiking: 0,
+        courtLevelOfLiking: 2,
         courtNumberOfPersonLiked: 0,
         courtCheckedIn: 0  
     },
@@ -103,6 +103,11 @@ class Map extends Component {
       CurrentLatitude: 0,
       CurrentLongitude: 0,
       clickedMarkerId: 1,
+      Star : ["RatingBlue",
+            "RatingBlue",
+            "RatingBlue",
+            "RatingBlue",
+            "RatingBlue"]
     };
     this.locationChange = this.locationChange.bind(this);
     this.geocodingCity = this.geocodingCity.bind(this);
@@ -159,6 +164,24 @@ class Map extends Component {
     this.getPosition();
     console.log(this.state.CurrentLatitude, this.state.CurrentLongitude);
     Geolocation.getCurrentPosition((info) => console.log(info));
+
+    this.setState(prevState =>{
+        let newStar = prevState.Star
+            for (let i=0; i<courtList.length; i++) {
+                for (let j=0; j<5; j++) {
+                    console.log(this.state.clickedMarkerId)
+                    if (j<courtList[this.state.clickedMarkerId-1].courtLevelOfLiking + 1){
+                        newStar[j] = "RatingOrange";
+                    } else {
+                        newStar[j] = "RatingBlue";
+                    } 
+                }
+            }
+            console.log(newStar);
+            console.log(this.state.Star);
+            return { Star : newStar };
+        }
+    );
   };
 
   componentDidMount() {
@@ -270,6 +293,11 @@ class Map extends Component {
                 courtName={courtList[this.state.clickedMarkerId - 1].courtName}
                 courtAddress={courtList[this.state.clickedMarkerId - 1].courtAddress}
                 image={courtList[this.state.clickedMarkerId - 1].courtImage}
+                star1={this.state.Star[0]}
+                star2={this.state.Star[1]}
+                star3={this.state.Star[2]}
+                star4={this.state.Star[3]}
+                star5={this.state.Star[4]}
               />
               {/* <Time /> */}
 
