@@ -22,7 +22,8 @@ class AddCourt extends Component {
       nameNewCourt: "",
       addressNewCourt: "",
       descriptionNewCourt: "",
-      locationNewCourt: { lat: 0, lng: 0 }
+      locationNewCourt: { lat: 0, lng: 0 },
+      courtCheckedIn: 0
     };
     this.nameChange = this.nameChange.bind(this);
     this.addressChange = this.addressChange.bind(this);
