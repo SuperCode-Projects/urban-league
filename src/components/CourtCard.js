@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
   faArrowAltCircleRight,
+  faTruckMonster,
 } from "@fortawesome/free-solid-svg-icons";
 import IconList from "./IconList";
 import { Link } from "react-router-dom";
@@ -30,6 +31,7 @@ const CourtCard = (props) => {
             variant="contained"
             type="submit"
             id="buttonDetails"
+            disabled={global.config.clickedMarkerId == 0? true: false}
           >
             DETAILS
             <FontAwesomeIcon icon={faArrowAltCircleRight} className="Arrow" />

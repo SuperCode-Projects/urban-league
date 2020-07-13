@@ -212,7 +212,7 @@ class Map extends Component {
   filterMarker = () => {
     courtList.forEach(element => {
       if (element.courtType == (global.config.court.selected.type)) {
-        filteredMarker.push(element);
+        global.config.filteredMarker.push(element);
       }
   });
 
@@ -251,6 +251,7 @@ class Map extends Component {
       clickedMarkerId: MarkerNumber,
       clickedMarkerLocation: MarkerLocation,
     }));
+    global.config.clickedMarkerId = MarkerNumber;
     this.getPosition();
     this.setState((prevState) => {
       let newStar = prevState.Star;
@@ -311,7 +312,7 @@ class Map extends Component {
             >
               <MarkerClusterer>
                 {(clusterer) =>
-                  filteredMarker.map((item) => (
+                  global.config.filteredMarker.map((item) => (
                     <Marker
                       key={item.id}
                       position={item.location}

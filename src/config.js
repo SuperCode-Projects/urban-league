@@ -14,5 +14,7 @@ module.exports = global.config = {
             likedPerson: 0,
             checkedIn: 0,
         }
-    }
+    },
+    filteredMarker : [],
+    clickedMarkerId : 0
 };
