@@ -31,6 +31,7 @@ import {
   faPlus,
   faLocationArrow,
   faSearch,
+  faRoute,
 } from "@fortawesome/free-solid-svg-icons";
 
 Geocode.setApiKey(`${GoogleAPIkey}`);
@@ -193,7 +194,7 @@ class Map extends Component {
         "RatingBlue",
         "RatingBlue",
         "RatingBlue",
-      ]
+      ],
     };
     this.filterMarker = this.filterMarker.bind(this);
     this.geocodingCity = this.geocodingCity.bind(this);
@@ -206,17 +207,15 @@ class Map extends Component {
 
   mapLoaded = () => {
     this.filterMarker();
-  }
-  
+  };
 
   filterMarker = () => {
-    courtList.forEach(element => {
-      if (element.courtType == (global.config.court.selected.type)) {
+    courtList.forEach((element) => {
+      if (element.courtType == global.config.court.selected.type) {
         filteredMarker.push(element);
       }
-  });
-
-  }
+    });
+  };
 
   geocodingCity = () => {
     Geocode.fromAddress(`${this.state.location}`).then(
@@ -268,15 +267,24 @@ class Map extends Component {
       }
       return { Star: newStar };
     });
-    global.config.court.detail.name = courtList[this.state.clickedMarkerId - 1].courtName;
-    global.config.court.detail.address = courtList[this.state.clickedMarkerId - 1].courtAddress;
-    global.config.court.detail.description = courtList[this.state.clickedMarkerId - 1].courtDescription;
-    global.config.court.detail.image = courtList[this.state.clickedMarkerId - 1].courtImage;
-    global.config.court.detail.type = courtList[this.state.clickedMarkerId - 1].courtType;
-    global.config.court.detail.surface = courtList[this.state.clickedMarkerId - 1].courtSurface;
-    global.config.court.detail.likeLevel = courtList[this.state.clickedMarkerId - 1].courtLevelOfLiking;
-    global.config.court.detail.likedPerson = courtList[this.state.clickedMarkerId - 1].courtNumberOfPersonLiked;
-    global.config.court.detail.checkedIn = courtList[this.state.clickedMarkerId - 1].courtCheckedIn;
+    global.config.court.detail.name =
+      courtList[this.state.clickedMarkerId - 1].courtName;
+    global.config.court.detail.address =
+      courtList[this.state.clickedMarkerId - 1].courtAddress;
+    global.config.court.detail.description =
+      courtList[this.state.clickedMarkerId - 1].courtDescription;
+    global.config.court.detail.image =
+      courtList[this.state.clickedMarkerId - 1].courtImage;
+    global.config.court.detail.type =
+      courtList[this.state.clickedMarkerId - 1].courtType;
+    global.config.court.detail.surface =
+      courtList[this.state.clickedMarkerId - 1].courtSurface;
+    global.config.court.detail.likeLevel =
+      courtList[this.state.clickedMarkerId - 1].courtLevelOfLiking;
+    global.config.court.detail.likedPerson =
+      courtList[this.state.clickedMarkerId - 1].courtNumberOfPersonLiked;
+    global.config.court.detail.checkedIn =
+      courtList[this.state.clickedMarkerId - 1].courtCheckedIn;
   };
 
   setCurrentPosition = () => {
@@ -322,90 +330,105 @@ class Map extends Component {
                           : `https://img.icons8.com/emoji/48/000000/yellow-circle-emoji.png`
                       }
                       clusterer={clusterer}
-                      onClick={() =>this.onClickedMarker(item.id, item.location)}
+                      onClick={() =>
+                        this.onClickedMarker(item.id, item.location)
+                      }
                     />
                   ))
                 }
               </MarkerClusterer>
 
-            <div className="searchCity">
-              <TextField
-                id="filled-search"
-                label="CITYNAME"
-                variant="outlined"
-                id="searchCity"
-                value={this.state.location}
-                onChange={this.locationChange}
-              />
+              <div className="searchCity">
+                <TextField
+                  id="filled-search"
+                  label="CITYNAME"
+                  variant="outlined"
+                  id="searchCity"
+                  value={this.state.location}
+                  onChange={this.locationChange}
+                />
 
-              <Button
-                size="small"
-                variant="contained"
-                type="submit"
-                id="searchButton"
-                onClick={this.geocodingCity}
-              >
-                <FontAwesomeIcon icon={faSearch} />
-              </Button>
-            </div>
+                <Button
+                  size="small"
+                  variant="contained"
+                  type="submit"
+                  id="searchButton"
+                  onClick={this.geocodingCity}
+                >
+                  <FontAwesomeIcon icon={faSearch} />
+                </Button>
+              </div>
 
-            <div id="Homebuttons">
-              {" "}
-              <Link to="/account">
+              <div id="Homebuttons">
+                {" "}
+                <Link to="/account">
+                  <Button
+                    size="small"
+                    variant="contained"
+                    type="submit"
+                    id="gotoAccount"
+                  >
+                    <FontAwesomeIcon icon={faUser} />
+                  </Button>
+                </Link>
+                <Link to="/addcourt">
+                  <Button
+                    size="small"
+                    variant="contained"
+                    type="submit"
+                    id="addCourtButton"
+                  >
+                    <FontAwesomeIcon icon={faPlus} />
+                  </Button>
+                </Link>
+                <Link to="#">
+                  <Button
+                    size="small"
+                    variant="contained"
+                    type="submit"
+                    id="myLocation"
+                    onClick={this.setCurrentPosition}
+
+                    //   onClick={this.handleSignUpClicked}
+                  >
+                    <FontAwesomeIcon
+                      icon={faLocationArrow}
+                      className="gotoProfil"
+                    />
+                  </Button>
+                </Link>
                 <Button
                   size="small"
                   variant="contained"
                   type="submit"
-                  id="gotoAccount"
-                >
-                  <FontAwesomeIcon icon={faUser} />
-                </Button>
-              </Link>
-              <Link to="/addcourt">
-                <Button
-                  size="small"
-                  variant="contained"
-                  type="submit"
-                  id="addCourtButton"
-                >
-                  <FontAwesomeIcon icon={faPlus} />
-                </Button>
-              </Link>
-              <Link to="#">
-                <Button
-                  size="small"
-                  variant="contained"
-                  type="submit"
-                  id="myLocation"
+                  id="route"
                   onClick={this.setCurrentPosition}
 
                   //   onClick={this.handleSignUpClicked}
                 >
-                  <FontAwesomeIcon
-                    icon={faLocationArrow}
-                    className="gotoProfil"
-                  />
+                  <FontAwesomeIcon icon={faRoute} className="gotoProfil" />
                 </Button>
-              </Link>
-            </div>
+              </div>
 
-            <CourtCard
-              courtName={courtList[this.state.clickedMarkerId - 1].courtName}
-              courtAddress={courtList[this.state.clickedMarkerId - 1].courtAddress}
-              image={courtList[this.state.clickedMarkerId - 1].courtImage}
-              star1={this.state.Star[0]}
-              star2={this.state.Star[1]}
-              star3={this.state.Star[2]}
-              star4={this.state.Star[3]}
-              star5={this.state.Star[4]}
-            />
+              <CourtCard
+                courtName={courtList[this.state.clickedMarkerId - 1].courtName}
+                courtAddress={
+                  courtList[this.state.clickedMarkerId - 1].courtAddress
+                }
+                image={courtList[this.state.clickedMarkerId - 1].courtImage}
+                star1={this.state.Star[0]}
+                star2={this.state.Star[1]}
+                star3={this.state.Star[2]}
+                star4={this.state.Star[3]}
+                star5={this.state.Star[4]}
+              />
 
-            {/* <Time /> */}
+              {/* <Time /> */}
 
-            <div id="divIconList">
-              <IconList />
-            </div>
-          </GoogleMap>
+              <div id="divIconList">
+                <IconList />
+              </div>
+            </GoogleMap>
           </div>
         </LoadScript>
       </div>
