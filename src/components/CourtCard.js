@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const CourtCard = (props) => {
   return (
-    <div className="CourtCardDiv">
+    <div className="CourtCardDiv" visibility={global.config.clickedMarkerId == 0? "hidden": "visible"}>
       <img className="CourtPicSmall" src={`${props.image}`} alt="bild"></img>
 
       <div className="CourtCardDescription">

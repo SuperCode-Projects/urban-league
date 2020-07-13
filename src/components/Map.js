@@ -43,6 +43,7 @@ const containerStyle = {
   borderRadius: "20px",
 };
 
+{/*
 const courtList = [
   {
     id: 1,
@@ -165,6 +166,8 @@ const courtList = [
     courtCheckedIn: 0,
   },
 ];
+*/}
+
 
 const filteredMarker = [];
 
@@ -210,7 +213,7 @@ class Map extends Component {
   };
 
   filterMarker = () => {
-    courtList.forEach(element => {
+    global.config.courtList.forEach(element => {
       if (element.courtType == (global.config.court.selected.type)) {
         global.config.filteredMarker.push(element);
       }
@@ -241,8 +244,6 @@ class Map extends Component {
 
   locationChange = (event) => {
     this.setState({ location: event.target.value });
-    this.getPosition = this.getPosition.bind(this);
-    this.setCurrentPosition = this.setCurrentPosition.bind(this);
   };
 
   onClickedMarker = (MarkerNumber, MarkerLocation) => {
@@ -254,11 +255,11 @@ class Map extends Component {
     this.getPosition();
     this.setState((prevState) => {
       let newStar = prevState.Star;
-      for (let i = 0; i < courtList.length; i++) {
+      for (let i = 0; i < global.config.courtList.length; i++) {
         for (let j = 0; j < 5; j++) {
           if (
             j <
-            courtList[this.state.clickedMarkerId - 1].courtLevelOfLiking + 1
+            global.config.courtList[this.state.clickedMarkerId - 1].courtLevelOfLiking + 1
           ) {
             newStar[j] = "RatingOrange";
           } else {
@@ -269,23 +270,23 @@ class Map extends Component {
       return { Star: newStar };
     });
     global.config.court.detail.name =
-      courtList[this.state.clickedMarkerId - 1].courtName;
+      global.config.courtList[this.state.clickedMarkerId - 1].courtName;
     global.config.court.detail.address =
-      courtList[this.state.clickedMarkerId - 1].courtAddress;
+      global.config.courtList[this.state.clickedMarkerId - 1].courtAddress;
     global.config.court.detail.description =
-      courtList[this.state.clickedMarkerId - 1].courtDescription;
+      global.config.courtList[this.state.clickedMarkerId - 1].courtDescription;
     global.config.court.detail.image =
-      courtList[this.state.clickedMarkerId - 1].courtImage;
+      global.config.courtList[this.state.clickedMarkerId - 1].courtImage;
     global.config.court.detail.type =
-      courtList[this.state.clickedMarkerId - 1].courtType;
+      global.config.courtList[this.state.clickedMarkerId - 1].courtType;
     global.config.court.detail.surface =
-      courtList[this.state.clickedMarkerId - 1].courtSurface;
+      global.config.courtList[this.state.clickedMarkerId - 1].courtSurface;
     global.config.court.detail.likeLevel =
-      courtList[this.state.clickedMarkerId - 1].courtLevelOfLiking;
+      global.config.courtList[this.state.clickedMarkerId - 1].courtLevelOfLiking;
     global.config.court.detail.likedPerson =
-      courtList[this.state.clickedMarkerId - 1].courtNumberOfPersonLiked;
+      global.config.courtList[this.state.clickedMarkerId - 1].courtNumberOfPersonLiked;
     global.config.court.detail.checkedIn =
-      courtList[this.state.clickedMarkerId - 1].courtCheckedIn;
+      global.config.courtList[this.state.clickedMarkerId - 1].courtCheckedIn;
   };
 
   setCurrentPosition = () => {
@@ -320,7 +321,8 @@ class Map extends Component {
             >
               <MarkerClusterer>
                 {(clusterer) =>
-                  global.config.filteredMarker.map((item) => (
+                    global.config.courtList.map((item) => (
+                  //global.config.filteredMarker.map((item) => (
                     <Marker
                       key={item.id}
                       position={item.location}
@@ -412,11 +414,11 @@ class Map extends Component {
               </div>
 
               <CourtCard
-                courtName={courtList[this.state.clickedMarkerId - 1].courtName}
+                courtName={global.config.courtList[this.state.clickedMarkerId - 1].courtName}
                 courtAddress={
-                  courtList[this.state.clickedMarkerId - 1].courtAddress
+                  global.config.courtList[this.state.clickedMarkerId - 1].courtAddress
                 }
-                image={courtList[this.state.clickedMarkerId - 1].courtImage}
+                image={global.config.courtList[this.state.clickedMarkerId - 1].courtImage}
                 star1={this.state.Star[0]}
                 star2={this.state.Star[1]}
                 star3={this.state.Star[2]}
