@@ -63,7 +63,7 @@ class AddCourt extends Component {
     setTimeout(() => {
       console.log(this.state.locationNewCourt);
       const newCourt = {
-        id: idNewCourt - 1,
+        id: idNewCourt,
         courtName: this.state.nameNewCourt,
         courtAddress: this.state.addressNewCourt,
         location: this.state.locationNewCourt,
