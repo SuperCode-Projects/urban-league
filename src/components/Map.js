@@ -122,13 +122,12 @@ const courtList = [
   },
   {
     id: 6,
-    courtName: "Basketballplatz hinter Bilk Arcarden",
+    courtName: "Basketballplatz Bilk Arcarden",
     courtAddress: "Friedrichstraße 145, 40217 Düsseldorf",
     location: { lat: 51.207883, lng: 6.771127 },
     courtDescription:
       "Hinter den Bilker Arcaden sind zwei eingezäunte Streetball Courts. Körbe nebeneinander Bodenbelag top, sehr einsam. ",
-    courtImage:
-      "https://lh3.googleusercontent.com/p/AF1QipNYLw3W8GyngGQHof20NxsBMyiffeUGqAMPUhPH=s0",
+    courtImage: "https://i.ibb.co/3NMPf74/2019-03-23.jpg",
     courtType: 0,
     courtSurface: 1,
     courtLevelOfLiking: 3,
@@ -158,7 +157,7 @@ const courtList = [
     courtDescription:
       "Beachvolleyball zwischen Skatepark und Freizeitpark Ulenberg. Sandqualität gut! ",
     courtImage:
-      "https://lh3.googleusercontent.com/p/AF1QipNFRfHgej4lfj4gR0LabpynneGsOjh-vHDfZ9fF=s0",
+      "https://i.ibb.co/nR1Vb1n/Bildschirmfoto-2020-07-13-um-14-21-46.png",
     courtType: 4,
     courtSurface: 4,
     courtLevelOfLiking: 4,
@@ -307,8 +306,6 @@ class Map extends Component {
 
   render() {
     return (
-      // {!this.context || !this.context.uid ? <Redirect to="signin" /> : ""}
-
       <div className="background">
         <LoadScript googleMapsApiKey={GoogleAPIkey}>
           <div>

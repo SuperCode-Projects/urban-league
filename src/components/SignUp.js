@@ -10,10 +10,18 @@ import { auth, firestore } from "../firebase";
 import { UserContext } from "../providers/UserProvider";
 import { Link, Redirect } from "react-router-dom";
 
+let showAlert2;
+
+showAlert2 = () => {
+  alert("Welcome to the world of Urban League!");
+};
+
 class SignUp extends Component {
   static contextType = UserContext;
   constructor(props) {
     super(props);
+
+    this.state = { redirect: false };
 
     this.handleEmailChanged = this.handleEmailChanged.bind(this);
     this.handleNameChanged = this.handleNameChanged.bind(this);
@@ -24,7 +32,7 @@ class SignUp extends Component {
   componentDidMount() {
     this.setState({ name: "", email: "", password: "" });
     auth.onAuthStateChanged(async (user) => {
-      if (!user) return;
+      if (!user || !this.state) return;
       await firestore
         .collection("users")
         .doc(user.uid)
@@ -32,6 +40,7 @@ class SignUp extends Component {
           { id: user.uid, email: user.email, displayName: this.state.name },
           { merge: true }
         );
+      this.setState({ redirect: "/" });
     });
   }
 
@@ -49,21 +58,24 @@ class SignUp extends Component {
   }
 
   async handleSignUpClicked() {
+    if (this.state.password.length < 6) {
+      alert("Your Password must be at least 6 characters long");
+      return;
+    }
     console.log("signing up with", this.state);
     const response = await auth.createUserWithEmailAndPassword(
       this.state.email,
       this.state.password
     );
     console.log("response", response);
-    if (this.state.password < 6) {
-      alert("Your Password must be at least 6 characters long");
-    }
+
+    showAlert2();
   }
 
   render() {
     return (
       <div className="background">
-        {this.context && this.context.uid ? <Redirect to="/" /> : ""}
+        {this.state.redirect ? <Redirect to={this.state.redirect} /> : ""}
         <div className="greenWithPic">
           <div id="text">
             <p className="p_big">Add your Profile</p>
@@ -93,7 +105,7 @@ class SignUp extends Component {
             variant="outlined"
             type="password"
             onChange={this.handlePasswordChanged}
-            error={this.state && this.state.password.length > 6}
+            error={this.state?.password?.length > 6}
           />
         </div>
         <h4>FAVOURITE SPORTS</h4>
