@@ -305,8 +305,6 @@ class Map extends Component {
 
   render() {
     return (
-      // {!this.context || !this.context.uid ? <Redirect to="signin" /> : ""}
-
       <div className="background">
         <LoadScript googleMapsApiKey={GoogleAPIkey}>
           <div>
