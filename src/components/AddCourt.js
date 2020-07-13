@@ -68,7 +68,7 @@ class AddCourt extends Component {
         courtAddress: this.state.addressNewCourt,
         location: this.state.locationNewCourt,
         courtDescription: this.state.descriptionNewCourt,
-        courtImage: "",
+        courtImage: "https://source.unsplash.com/random/300x200?" + `${this.state.nameNewCourt}`,
         courtType: 0,
         courtSurface: 0,
         courtLevelOfLiking: 4,
