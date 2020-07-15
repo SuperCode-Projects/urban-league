@@ -131,7 +131,7 @@ module.exports = global.config = {
       courtDescription:
         "Beachvolleyball zwischen Skatepark und Freizeitpark Ulenberg. Sandqualität gut! ",
       courtImage:
-        "https://lh3.googleusercontent.com/p/AF1QipNFRfHgej4lfj4gR0LabpynneGsOjh-vHDfZ9fF=s0",
+        "https://i.ibb.co/XJJxSCq/Bildschirmfoto-2020-07-15-um-17-39-12.png",
       courtType: 4,
       courtSurface: 4,
       courtLevelOfLiking: 4,

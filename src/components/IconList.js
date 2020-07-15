@@ -40,7 +40,7 @@ class IconList extends Component {
               <button onClick={this.selectCourtType2.bind(this, dispatch)}>
                 <img src="./images/icons/icon_soccer.png" alt="icon soccer" />
               </button>
-              <button onClick={this.selectCourtType1.bind(this, dispatch)}>
+              <button onClick={this.selectCourtType4.bind(this, dispatch)}>
                 <img
                   src="./images/icons/icon_volleyball.png"
                   alt="icon volleyball"
@@ -52,7 +52,7 @@ class IconList extends Component {
                   alt="icon ping-pong"
                 />
               </button>
-              <button onClick={this.selectCourtType4.bind(this, dispatch)}>
+              <button onClick={this.selectCourtType1.bind(this, dispatch)}>
                 <img src="./images/icons/icon_dart.png" alt="icon dart" />
               </button>
             </div>
