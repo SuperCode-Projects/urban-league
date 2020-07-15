@@ -1,35 +1,49 @@
 import React, { Component } from "react";
 import "./IconList.css";
+import CourtConsumer from "../CourtProvider";
+import { courtList } from "../config";
 
 class IconList extends Component {
 
-constructor(props) {
-  super(props);
-  this.state = {
-    selectedCourtType: 0
-  };
-  this.selectCourtType = this.selectCourtType.bind(this);
+selectCourtType0 = (dispatch) => {
+  dispatch({type : "SELECT_COURT_TYPE",payload: 0})
 }
 
-selectCourtType = (courtType) => {
-  global.config.court.selected.type = courtType;
-  this.setState({selectedCourtType: courtType}, () => {console.log(this.state.selectedCourtType, global.config.court.selected.type)});
+selectCourtType1 = (dispatch) => {
+  dispatch({type : "SELECT_COURT_TYPE",payload: 1})
 }
 
-componentDidMount(){
-  this.selectCourtType();
+selectCourtType2 = (dispatch) => {
+  dispatch({type : "SELECT_COURT_TYPE",payload: 2})
+}
+
+selectCourtType3 = (dispatch) => {
+  dispatch({type : "SELECT_COURT_TYPE",payload: 3})
+}
+
+selectCourtType4 = (dispatch) => {
+  dispatch({type : "SELECT_COURT_TYPE",payload: 4})
 }
 
   render () {
     return (
-      <div id="iconlist">
-        <button onClick={() => this.selectCourtType(0)}><img src="./images/icons/icon_basketball.png" alt="icon basketball"/></button>
-        <button onClick={() => this.selectCourtType(1)}><img src="./images/icons/icon_soccer.png" alt="icon soccer"/></button>
-        <button onClick={() => this.selectCourtType(2)}><img src="./images/icons/icon_volleyball.png" alt="icon volleyball"/></button>
-        <button onClick={() => this.selectCourtType(3)}><img src="./images/icons/icon_ping-pong.png" alt="icon ping-pong"/></button>
-        <button onClick={() => this.selectCourtType(4)}><img src="./images/icons/icon_dart.png" alt="icon dart"/></button>      
-      </div>
-    );
+      <CourtConsumer>
+        {
+          value => {
+            const {dispatch} = value;
+            return (
+              <div id="iconlist">
+                <button onClick={this.selectCourtType0.bind(this,dispatch)}><img src="./images/icons/icon_basketball.png" alt="icon basketball"/></button>
+                <button onClick={this.selectCourtType1.bind(this,dispatch)}><img src="./images/icons/icon_soccer.png" alt="icon soccer"/></button>
+                <button onClick={this.selectCourtType2.bind(this,dispatch)}><img src="./images/icons/icon_volleyball.png" alt="icon volleyball"/></button>
+                <button onClick={this.selectCourtType3.bind(this,dispatch)}><img src="./images/icons/icon_ping-pong.png" alt="icon ping-pong"/></button>
+                <button onClick={this.selectCourtType4.bind(this,dispatch)}><img src="./images/icons/icon_dart.png" alt="icon dart"/></button>      
+              </div>
+            );
+          }
+        }
+      </CourtConsumer>
+    )
   }
 };
 

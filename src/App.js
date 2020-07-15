@@ -16,47 +16,48 @@ import Map from "./components/Map";
 import Time from "./components/Time";
 import UserProvider, { UserContext } from "./providers/UserProvider";
 
+
 class App extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
         <UserProvider>
-          <div id="App">
-            <Switch>
-              <Route exact path="/">
-                <Map />
-              </Route>
-              <Route exact path="/signin">
-                <SignIn />
-              </Route>
-              <Route exact path="/signup">
-                <SignUp />
-              </Route>
-              <Route exact path="/account">
-                <Account />
-              </Route>
-              <Route exact path="/addcourt">
-                <AddCourt />
-              </Route>
-              <Route exact path="/courtdetails">
-                <CourtDetails />
-              </Route>
-              {/* <Route exact path="/home">
-                <Home /> */}
-              {/* </Route> */}
-              <Route exact path="/time">
-                <Time />
-              </Route>
-              {/* <UserContext.Consumer>
-								{(user) => (user && user.uid ? <Home /> : <SignIn />)}
-							</UserContext.Consumer> */}
-              {/* <CourtCard /> */}
-              {/* <Home /> */}
-              {/* <CourtCard /> */}
-              {/* <CourtDetails /> */}
-              {/* <Addcourt /> */}
-            </Switch>
-          </div>
+            <div id="App">
+              <Switch>
+                <Route exact path="/">
+                  <Map />
+                </Route>
+                <Route exact path="/signin">
+                  <SignIn />
+                </Route>
+                <Route exact path="/signup">
+                  <SignUp />
+                </Route>
+                <Route exact path="/account">
+                  <Account />
+                </Route>
+                <Route exact path="/addcourt">
+                  <AddCourt />
+                </Route>
+                <Route exact path="/courtdetails">
+                  <CourtDetails />
+                </Route>
+                {/* <Route exact path="/home">
+                  <Home /> */}
+                {/* </Route> */}
+                <Route exact path="/time">
+                  <Time />
+                </Route>
+                {/* <UserContext.Consumer>
+                  {(user) => (user && user.uid ? <Home /> : <SignIn />)}
+                </UserContext.Consumer> */}
+                {/* <CourtCard /> */}
+                {/* <Home /> */}
+                {/* <CourtCard /> */}
+                {/* <CourtDetails /> */}
+                {/* <Addcourt /> */}
+              </Switch>
+            </div>
         </UserProvider>
       </ThemeProvider>
     );

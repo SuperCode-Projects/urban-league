@@ -11,6 +11,8 @@ import Button from "@material-ui/core/Button";
 import Geocode from "react-geocode";
 import { GoogleAPIkey } from "../key";
 
+
+
 Geocode.setApiKey(`${GoogleAPIkey}`);
 
 
@@ -23,7 +25,6 @@ class AddCourt extends Component {
       addressNewCourt: "",
       descriptionNewCourt: "",
       locationNewCourt: { lat: 0, lng: 0 },
-      courtCheckedIn: 0
     };
     this.nameChange = this.nameChange.bind(this);
     this.addressChange = this.addressChange.bind(this);
@@ -70,7 +71,7 @@ class AddCourt extends Component {
         location: this.state.locationNewCourt,
         courtDescription: this.state.descriptionNewCourt,
         courtImage: "https://source.unsplash.com/random/300x200?" + `${this.state.nameNewCourt}`,
-        courtType: 0,
+        courtType: 2,
         courtSurface: 0,
         courtLevelOfLiking: 4,
         courtNumberOfPersonLiked: 0,
