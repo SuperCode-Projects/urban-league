@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
   faArrowAltCircleRight,
-  faArrowAltCircleLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "@material-ui/core/Button";
 

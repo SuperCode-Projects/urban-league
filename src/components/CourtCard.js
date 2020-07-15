@@ -5,14 +5,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
   faArrowAltCircleRight,
-  faTruckMonster,
 } from "@fortawesome/free-solid-svg-icons";
-import IconList from "./IconList";
+
 import { Link } from "react-router-dom";
 
 const CourtCard = (props) => {
   return (
-    <div className="CourtCardDiv" visibility={global.config.clickedMarkerId == 0? "hidden": "visible"}>
+    <div
+      className="CourtCardDiv"
+      visibility={global.config.clickedMarkerId === 0 ? "hidden" : "visible"}
+    >
       <img className="CourtPicSmall" src={`${props.image}`} alt="bild"></img>
 
       <div className="CourtCardDescription">
@@ -31,7 +33,7 @@ const CourtCard = (props) => {
             variant="contained"
             type="submit"
             id="buttonDetails"
-            disabled={global.config.clickedMarkerId == 0? true: false}
+            disabled={global.config.clickedMarkerId === 0 ? true : false}
           >
             DETAILS
             <FontAwesomeIcon icon={faArrowAltCircleRight} className="Arrow" />
