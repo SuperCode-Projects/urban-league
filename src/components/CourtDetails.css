@@ -1,0 +1,119 @@
+.CourtPic {
+  width: 100%;
+  height: 40%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#buttonPlayer {
+  position: absolute;
+  left: 40%;
+  right: auto;
+  margin-top: -230px;
+}
+
+.Rating,
+#RateIt,
+.CourtButtons {
+  width: 70%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  color: orange;
+}
+
+.RatingOrange {
+  color: orange;
+}
+
+.RatingBlue {
+  color: lightBlue;
+}
+
+.RatingBlue:hover {
+  color: orange;
+}
+
+.RatingNum {
+  margin: 0;
+  margin-left: 5px;
+}
+
+.CourtAdress {
+  color: gray;
+  margin: 0;
+  margin-left: 5px;
+}
+
+.CourtCardBig {
+  background-color: white;
+  height: 65%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-radius: 20px;
+  text-align: left;
+}
+
+.CourtCardBig > * {
+  margin-left: 30px;
+  margin-right: 40px;
+}
+
+.CourtDescription {
+  line-height: 2.5vh;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+#courtName {
+  margin-bottom: 0;
+}
+
+#RateIt {
+  width: 65%;
+  height: 15%;
+  justify-content: space-between;
+  color: black;
+}
+
+#RateIt p {
+  margin: 0;
+}
+
+.CourtButtons {
+  width: 85%;
+  justify-content: space-between;
+}
+
+.Arrow {
+  color: white;
+  margin-left: 10px;
+}
+
+#buttonList {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.buttonGreen {
+  border-radius: 30px;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 0.8em;
+  color: grey;
+  outline: none;
+  background-color: rgb(208, 236, 208);
+}
+
+.buttonGreen:hover {
+  background-color: #70bb8c;
+}
+
+#buttonList button {
+  width: 120px;
+  margin-left: 20px;
+}

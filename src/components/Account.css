@@ -1,0 +1,37 @@
+/* More styles in Signup.css */
+
+#Pic_round {
+  position: relative;
+}
+
+#userimage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-image: url(https://scontent-dus1-1.xx.fbcdn.net/v/t1.0-9/100550545_3023282861097134_4394855410532614144_n.jpg?_nc_cat=103&_nc_sid=7aed08&_nc_eui2=AeE0lNCfyiSemaClnhL307JSPXYHWRHd5Zc9dgdZEd3ll95YD7tn7OnaFSnMD6at9msGONbj4_DYxbpsHV-RbSmQ&_nc_oc=AQnFRQZBWtgeWwRUj8yha6HpNR5plCUleU0ettIaM384GIEqETVYlT9aEUcKVw907L83a2FjfB_3y0f5L337owuK&_nc_ht=scontent-dus1-1.xx&oh=7b5e3d771f04867f33d74379c7f5411a&oe=5F2FB3DC);
+  background-position: cover;
+  object-fit: contain;
+  background-size: 150px;
+}
+
+h2,
+h3 {
+  margin: 0;
+}
+
+h3 {
+  margin-bottom: 6%;
+}
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#formSignUp {
+  margin-bottom: 3%;
+}
+
+#formSignUp h2 {
+  margin-top: 10%;
+}

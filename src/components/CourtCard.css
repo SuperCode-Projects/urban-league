@@ -1,0 +1,53 @@
+.CourtCardDiv {
+  height: 25%;
+  width: 80%;
+  border-radius: 20px;
+  background-color: white;
+  position: absolute;
+  bottom: 12%;
+  right: auto;
+  left: 10%;
+  display: flex;
+}
+
+.CourtPicSmall {
+  height: 100%;
+  width: 40%;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.CourtCardDescription {
+  height: 100%;
+  width: 60%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  text-align: left;
+  margin-left: 15px;
+}
+
+p {
+  margin: 0;
+}
+
+.CourtCardDescription h3 {
+  margin-top: 7px;
+  margin-bottom: 5px;
+}
+
+.CourtCardDescription p {
+  margin-bottom: 3px;
+}
+
+#buttonDetails {
+  margin-top: 6px;
+}
+
+Link:visited {
+  color: orange;
+}
+
+Link:active {
+  color: black;
+}

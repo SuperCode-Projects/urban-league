@@ -1,0 +1,26 @@
+#iconlist img {
+  width: 30px;
+  opacity: 0.4;
+}
+
+#iconlist img:hover {
+  opacity: 1;
+}
+
+#iconlist {
+  width: 90%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#iconlist button {
+  border: none;
+  outline: none;
+  background-color: Transparent;
+}

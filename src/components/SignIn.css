@@ -1,0 +1,36 @@
+#backgroundSignIn {
+  background-image: url(/images/background-img-sign-in.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+#formSignIn {
+  margin-top: 70%;
+  width: 70%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#forgotPassword {
+  color: #56ccf2;
+  font-size: 0.8em;
+}
+
+p {
+  font-size: 0.8em;
+  margin-top: 50px;
+}
+
+#account {
+  margin-top: 60px;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}

@@ -1,0 +1,19 @@
+.buttonList_newCourt {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  outline: none;
+}
+
+#sizeField {
+  width: 50%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttonList_newCourt button {
+  width: 120px;
+  margin-left: 20px;
+}
